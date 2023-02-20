@@ -1,0 +1,89 @@
+$btn_radius: 10px;
+$btn_color1: #fff;
+$btn_color2: #000;
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 50px;
+
+    .nav-left {
+        h1 {
+            font-family: sans-serif;
+        }
+    }
+
+    .nav-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 20px;
+
+        .MenuButtonIcon {
+            display: none;
+
+            .MenuIcon {
+                color: #fff;
+                font-size: 30px;
+            }
+
+            @media (max-width: 480px) {
+                display: block;
+            }
+        }
+
+        .btn-1 {
+            border-radius: $btn_radius;
+            border: 1px solid #fff;
+            background-color: $btn_color2;
+            color: $btn_color1;
+
+            @media (max-width: 480px) {
+                display: none;
+            }
+        }
+
+        .btn-2 {
+            border-radius: $btn_radius;
+            background-color: $btn_color1;
+            color: $btn_color2;
+
+            @media (max-width: 480px) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 769px) {
+            column-gap: 10px;
+        }
+    }
+
+    @media (max-width: 769px) {
+        padding: 16px 20px;
+    }
+
+    @media (max-width: 480px) {
+        padding: 16px;
+    }
+    
+    @media (max-width: 320px) {
+        
+    }
+}
+
+@media (max-width: 1024px) {
+    
+}
+
+@media (max-width: 769px) {
+    
+}
+
+@media (max-width: 480px) {
+    
+}
+
+@media (max-width: 320px) {
+    
+}

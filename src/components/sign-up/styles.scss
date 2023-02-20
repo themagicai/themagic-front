@@ -1,0 +1,57 @@
+.sign-up {
+    width: 100%;
+    padding: 50px 0;
+
+    .Box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        row-gap: 20px;
+
+        .Typography1 {
+
+            span {
+                background: -webkit-linear-gradient(#139ebc, #aa1ecd);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        .TextField {
+            width: 320px;
+            background-color: #bbb;
+            border-radius: 10px;
+        }
+
+        .Button {
+            width: 110px;
+            background: linear-gradient(#139ebc, #aa1ecd);
+            border-radius: 20px;
+        }
+    }
+}
+
+.MuiTextField-root {
+    &:focus{
+        border: none;
+        outline: none;
+        color: #000;
+    }
+}
+
+@media (max-width: 1024px) {
+    
+}
+
+@media (max-width: 769px) {
+    
+}
+
+@media (max-width: 480px) {
+    
+}
+
+@media (max-width: 320px) {
+    
+}

@@ -1,0 +1,65 @@
+.cards {
+    background-color: transparent;
+    padding: 100px 200px;
+
+    .titles {
+        text-align: center;
+        padding-bottom: 20px;
+
+        .Typography2{
+            background: -webkit-linear-gradient(#139EBC, #AA1ECD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+    }
+
+    .cards-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        background-color: transparent;
+        gap: 15px;
+
+        .cards-area {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 16px;
+
+            .Typography1 {
+                font-weight: 800;
+            }
+        }
+
+        @media (max-width: 480px) {
+            gap: 10px;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        padding: 100px 120px;
+    }
+    
+    @media (max-width: 769px) {
+        padding: 100px 30px;
+    }
+    
+    @media (max-width: 480px) {
+        padding: 100px 10px;
+    }
+}
+
+@media (max-width: 1024px) {
+    
+}
+
+@media (max-width: 769px) {
+    
+}
+
+@media (max-width: 480px) {
+    
+}
+
+@media (max-width: 320px) {
+    
+}
