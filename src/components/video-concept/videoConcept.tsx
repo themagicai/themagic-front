@@ -18,7 +18,7 @@ export const VideoConcept = () => {
                     </div>
                 </div>
                 <iframe
-                    src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1"
+                    src="https://www.youtube.com/embed/"
                     allowFullScreen
                 >
                     <h1>video</h1>

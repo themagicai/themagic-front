@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
 .sign-up {
     width: 100%;
     padding: 50px 0;
@@ -10,9 +12,10 @@
         row-gap: 20px;
 
         .Typography1 {
+            font-family: 'Montserrat', sans-serif;
 
             span {
-                background: -webkit-linear-gradient(#139ebc, #aa1ecd);
+                background: -webkit-linear-gradient(right, #139EBC, #AA1ECD);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
@@ -20,23 +23,17 @@
 
         .TextField {
             width: 320px;
-            background-color: #bbb;
+            background-color: #aaa;
             border-radius: 10px;
         }
 
         .Button {
-            width: 110px;
-            background: linear-gradient(#139ebc, #aa1ecd);
-            border-radius: 20px;
+            width: 125px;
+            height: 45px;
+            background: linear-gradient(to right, #139ebc, #aa1ecd);
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
         }
-    }
-}
-
-.MuiTextField-root {
-    &:focus{
-        border: none;
-        outline: none;
-        color: #000;
     }
 }
 

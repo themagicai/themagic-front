@@ -5,7 +5,7 @@
     padding: 50px 0;
 
     .Box {
-        width: 60%;
+        width: 900px;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -37,7 +37,7 @@
         }
 
         @media (max-width: 1024px) {
-            width: 70%;
+            width: 80%;
         }
 
         @media (max-width: 769px) {

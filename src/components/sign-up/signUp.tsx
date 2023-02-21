@@ -1,8 +1,29 @@
-import React from "react";
+import { MouseEvent, useState } from "react";
 import "./styles.scss";
-import { Typography, Button, TextField, Box } from "@mui/material";
+import {
+    Button,
+    Box,
+    Typography,
+    TextField,
+    FormControl,
+    InputLabel,
+    InputAdornment,
+    IconButton,
+    OutlinedInput,
+} from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 export const SignUp = () => {
+    const [showPassword, setShowPassword] = useState(false);
+
+    const handleClickShowPassword = () => {
+        setShowPassword((show) => !show);
+    };
+
+    const handleMouseDownPassword = (event: MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+    };
+
     return (
         <div className="sign-up">
             <Box component="form" noValidate autoComplete="off" className="Box">
@@ -10,7 +31,7 @@ export const SignUp = () => {
                     Try now for <span>FREE</span>
                 </Typography>
                 <TextField className="TextField" label="Name" type="text" />
-                <TextField className="TextField" label="Email" type="text" />
+                <TextField className="TextField" label="Email" type="email" />
                 <TextField
                     className="TextField"
                     label="Create password"

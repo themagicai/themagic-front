@@ -1,49 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 .banner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 80px 100px;
 
     .con-left {
-        h1 {
-            font-size: 80px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        row-gap: 100px;
 
-            @media (max-width: 1024px) {
-                font-size: 50px;
-            }
+        .con-text {
+            h1 {
+                font-size: 80px;
+                font-family: 'Montserrat', sans-serif;
 
-            @media (max-width: 769px) {
-                font-size: 50px;
-            }
+                @media (max-width: 1024px) {
+                    font-size: 50px;
+                }
 
-            @media (max-width: 480px) {
-            }
+                @media (max-width: 769px) {
+                    font-size: 60px;
+                }
 
-            @media (max-width: 320px) {
+                @media (max-width: 480px) {
+                    font-size: 50px;
+                }
+
+                @media (max-width: 320px) {
+                }
             }
-        }
-        p {
+            p {
+                font-family: 'Montserrat', sans-serif;
+            }
         }
         .btn {
-            width: 120px;
-            border-radius: 20px;
-            background: linear-gradient(#139ebc, #aa1ecd);
+            width: 150px;
+            height: 40px;
+            border-radius: 25px;
+            background: linear-gradient(0.25turn, #139ebc, #aa1ecd);
         }
     }
 
     .con-right {
+        // background: 100% 100% no-repeat url('../../assets/images/back1.png');
+        
         img {
-            width: 400px;
-            height: 400px;
+            margin-top: -80px;
+            width: 513px;
+            height: 513px;
+
+            @media (max-width: 769px) {
+                margin-top: 25px;
+                margin-left: -30px;
+            }
 
             @media (max-width: 480px) {
-                width: 300px;
-                height: 300px;
+                width: 400px;
+                height: 400px;
             }
-            
+
             @media (max-width: 320px) {
                 width: 250px;
                 height: 250px;
+                margin-top: -80px;
             }
         }
     }
@@ -54,7 +76,7 @@
         justify-content: space-between;
         padding: 80px 40px;
     }
-    
+
     @media (max-width: 769px) {
         display: flex;
         align-items: center;

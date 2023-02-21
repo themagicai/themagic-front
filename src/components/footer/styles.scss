@@ -1,12 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 .footer {
     background-color: #000;
-    padding: 70px;
+    padding: 40px;
     text-align: center;
+
+    .Typography {
+        font-family: 'Montserrat', sans-serif;
+    }
 
     .email {
         font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
         text-decoration: none;
-        background: -webkit-linear-gradient(#139EBC, #D33CF9);
+        background: -webkit-linear-gradient(left, #139EBC, #D33CF9);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 $btn_radius: 10px;
 $btn_color1: #fff;
 $btn_color2: #000;
@@ -6,11 +7,17 @@ $btn_color2: #000;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 50px;
+    padding: 16px 83px;
+    border-bottom: 1px solid #fff;
+    background-color: $btn_color2;
 
     .nav-left {
         h1 {
-            font-family: sans-serif;
+            font-family: 'Montserrat', sans-serif;
+        
+            @media (max-width: 480px) {
+                font-size: 25px;
+            }
         }
     }
 
@@ -30,6 +37,9 @@ $btn_color2: #000;
 
             @media (max-width: 480px) {
                 display: block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
         }
 
@@ -60,15 +70,11 @@ $btn_color2: #000;
     }
 
     @media (max-width: 769px) {
-        padding: 16px 20px;
+        padding: 16px;
     }
 
     @media (max-width: 480px) {
-        padding: 16px;
-    }
-    
-    @media (max-width: 320px) {
-        
+        padding: 8px;
     }
 }
 

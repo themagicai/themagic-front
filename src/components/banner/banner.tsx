@@ -7,16 +7,15 @@ export const Banner = () => {
     return (
         <div className="banner">
             <div className="con-left">
-                <h1>The magic AI</h1>
-                <br />
-                <p>
-                    Get the job you want using AI. <br />
-                    write faster, think bigger and improve <br />
-                    your careativity with the power of magic.
-                </p>
-                <br />
-                <br />
-                <br />
+                <div className="con-text">
+                    <h1>The magic AI</h1>
+                    <br />
+                    <p>
+                        Get the job you want using AI. <br />
+                        write faster, think bigger and improve <br />
+                        your careativity with the power of magic.
+                    </p>
+                </div>
                 <Button className="btn" variant="contained">
                     Try now
                 </Button>
