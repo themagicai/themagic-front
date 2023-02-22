@@ -2,7 +2,7 @@
 
 .sign-up {
     width: 100%;
-    padding: 50px 0;
+    padding-bottom: 80px;
 
     .Box {
         display: flex;
@@ -23,7 +23,7 @@
 
         .TextField {
             width: 320px;
-            background-color: #aaa;
+            background-color: #ccc;
             border-radius: 10px;
         }
 
@@ -33,6 +33,9 @@
             background: linear-gradient(to right, #139ebc, #aa1ecd);
             border-radius: 30px;
             font-family: 'Montserrat', sans-serif;
+            text-transform: none;
+            font-weight: 900;
+            font-size: 15px;
         }
     }
 }

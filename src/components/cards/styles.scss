@@ -1,6 +1,6 @@
 .cards {
     background-color: transparent;
-    padding: 80px 220px;
+    padding: 80px 240px;
 
     .titles {
         text-align: center;
@@ -31,11 +31,15 @@
         }
 
         @media (max-width: 769px) {
+            padding: 8px;
             gap: 15px;
         }
 
         @media (max-width: 480px) {
-            gap: 10px;
+            display: grid;
+            grid-template-columns: auto;
+            row-gap: 20px;
+            padding: 10px;
         }
     }
 

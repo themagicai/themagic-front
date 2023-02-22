@@ -4,13 +4,13 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 80px 100px;
+    padding: 80px;
 
     .con-left {
         display: flex;
         justify-content: center;
         flex-direction: column;
-        row-gap: 100px;
+        row-gap: 90px;
 
         .con-text {
             h1 {
@@ -34,25 +34,38 @@
             }
             p {
                 font-family: 'Montserrat', sans-serif;
+                line-height: 22px;
             }
         }
-        .btn {
-            width: 150px;
-            height: 40px;
+
+        .Button {
+            width: 160px;
+            height: 45px;
             border-radius: 25px;
             background: linear-gradient(0.25turn, #139ebc, #aa1ecd);
+            text-transform: none;
+            font-weight: 900;
+            font-size: 16px;
         }
     }
 
     .con-right {
-        // background: 100% 100% no-repeat url('../../assets/images/back1.png');
-        
         img {
-            margin-top: -80px;
-            width: 513px;
-            height: 513px;
+            width: 530px;
+            height: 530px;
+            margin-top: -70px;
+            margin-right: -50px;
+
+            @media (max-width: 1023px) {
+                width: 450px;
+                height: 450px;
+                margin-left: -30px;
+                margin-right: -30px;
+            }
 
             @media (max-width: 769px) {
+                width: 530px;
+                height: 530px;
                 margin-top: 25px;
                 margin-left: -30px;
             }

@@ -43,21 +43,25 @@ $btn_color2: #000;
             }
         }
 
-        .btn-1 {
+        .Button1 {
             border-radius: $btn_radius;
             border: 1px solid #fff;
             background-color: $btn_color2;
             color: $btn_color1;
+            text-transform: none;
+            font-weight: 900;
 
             @media (max-width: 480px) {
                 display: none;
             }
         }
 
-        .btn-2 {
+        .Button2 {
             border-radius: $btn_radius;
             background-color: $btn_color1;
             color: $btn_color2;
+            text-transform: none;
+            font-weight: 900;
 
             @media (max-width: 480px) {
                 display: none;

@@ -42,10 +42,10 @@ export const Header = () => {
                     <MenuItem onClick={handleClose}>Login</MenuItem>
                     <MenuItem onClick={handleClose}>SignUp</MenuItem>
                 </Menu>
-                <Button className="btn-1" variant="contained">
+                <Button className="Button1" variant="contained">
                     Log in
                 </Button>
-                <Button className="btn-2" variant="contained">
+                <Button className="Button2" variant="contained">
                     Sign Up
                 </Button>
             </div>

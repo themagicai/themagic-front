@@ -1,5 +1,5 @@
 import { createBrowserRouter, Link } from "react-router-dom";
-import { WelcomePage } from "../pages";
+import { HomePage } from "../pages";
 import { SignUp } from "../components";
 
 export const router = createBrowserRouter([
@@ -7,7 +7,7 @@ export const router = createBrowserRouter([
         path: "/",
         element: (
             <>
-                <WelcomePage />
+                <HomePage />
             </>
         ),
     },

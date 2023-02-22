@@ -16,7 +16,7 @@ export const Banner = () => {
                         your careativity with the power of magic.
                     </p>
                 </div>
-                <Button className="btn" variant="contained">
+                <Button className="Button" variant="contained">
                     Try now
                 </Button>
             </div>

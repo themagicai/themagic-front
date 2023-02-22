@@ -1,17 +1,6 @@
 import { MouseEvent, useState } from "react";
 import "./styles.scss";
-import {
-    Button,
-    Box,
-    Typography,
-    TextField,
-    FormControl,
-    InputLabel,
-    InputAdornment,
-    IconButton,
-    OutlinedInput,
-} from "@mui/material";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { Button, Box, Typography, TextField } from "@mui/material";
 
 export const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);

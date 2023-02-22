@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
 .video {
     display: flex;
     align-items: center;
@@ -12,20 +14,18 @@
 
         .title {
             display: flex;
-            align-items: flex-end;
-            column-gap: 15px;
-            padding-bottom: 10px;
+            align-items: center;
+            column-gap: 10px;
+            padding-left: 15px;
+            padding-bottom: 7px;
 
             h1 {
+                font-family: 'Montserrat', sans-serif;
             }
 
-            .vectors {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                img {
-                }
+            img {
+                width: 55px;
+                padding-top: 15px;
             }
         }
 
