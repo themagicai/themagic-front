@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
 $btn_radius: 10px;
 $btn_color1: #fff;
 $btn_color2: #000;
@@ -13,8 +13,8 @@ $btn_color2: #000;
 
     .nav-left {
         h1 {
-            font-family: 'Montserrat', sans-serif;
-        
+            font-family: "Montserrat", sans-serif;
+
             @media (max-width: 480px) {
                 font-size: 25px;
             }
@@ -82,18 +82,14 @@ $btn_color2: #000;
     }
 }
 
-@media (max-width: 1024px) {
-    
-}
+// @media (max-width: 1024px) {
+// }
 
-@media (max-width: 769px) {
-    
-}
+// @media (max-width: 769px) {
+// }
 
-@media (max-width: 480px) {
-    
-}
+// @media (max-width: 480px) {
+// }
 
-@media (max-width: 320px) {
-    
-}
+// @media (max-width: 320px) {
+// }

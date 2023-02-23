@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
 
 .sign-up {
     width: 100%;
@@ -12,10 +12,10 @@
         row-gap: 20px;
 
         .Typography1 {
-            font-family: 'Montserrat', sans-serif;
+            font-family: "Montserrat", sans-serif;
 
             span {
-                background: -webkit-linear-gradient(right, #139EBC, #AA1ECD);
+                background: -webkit-linear-gradient(right, #139ebc, #aa1ecd);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
@@ -32,7 +32,7 @@
             height: 45px;
             background: linear-gradient(to right, #139ebc, #aa1ecd);
             border-radius: 30px;
-            font-family: 'Montserrat', sans-serif;
+            font-family: "Montserrat", sans-serif;
             text-transform: none;
             font-weight: 900;
             font-size: 15px;
@@ -40,18 +40,14 @@
     }
 }
 
-@media (max-width: 1024px) {
-    
-}
+// @media (max-width: 1024px) {
+// }
 
-@media (max-width: 769px) {
-    
-}
+// @media (max-width: 769px) {
+// }
 
-@media (max-width: 480px) {
-    
-}
+// @media (max-width: 480px) {
+// }
 
-@media (max-width: 320px) {
-    
-}
+// @media (max-width: 320px) {
+// }

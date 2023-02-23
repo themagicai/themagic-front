@@ -1,2 +1,2 @@
 export { HomePage } from "./home";
-export { JobPage } from "./job";
+export { CVPage } from "./cv";
