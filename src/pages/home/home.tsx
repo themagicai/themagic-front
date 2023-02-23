@@ -8,16 +8,20 @@ import {
     SignUp,
     Footer,
 } from "../../components";
+// import { CVPage } from "../";
 
 export const HomePage = () => {
     return (
         <div className="home">
             <Header />
-            <Banner />
-            <VideoConcept />
-            <Cards />
-            <SignUp />
+            <div className="background-image">
+                <Banner />
+                <VideoConcept />
+                <Cards />
+                <SignUp />
+            </div>
             <Footer />
+            {/* <CVPage /> */}
         </div>
     );
 };

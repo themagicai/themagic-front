@@ -20,9 +20,7 @@ export const Banner = () => {
                     Try now
                 </Button>
             </div>
-            <div className="con-right">
-                <img src={shape} alt="Shape logo" />
-            </div>
+            <img src={shape} alt="Shape logo" />
         </div>
     );
 };

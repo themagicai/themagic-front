@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
 .banner {
     display: flex;
@@ -15,7 +15,7 @@
         .con-text {
             h1 {
                 font-size: 80px;
-                font-family: 'Montserrat', sans-serif;
+                font-family: "Montserrat", sans-serif;
 
                 @media (max-width: 1024px) {
                     font-size: 50px;
@@ -33,7 +33,7 @@
                 }
             }
             p {
-                font-family: 'Montserrat', sans-serif;
+                font-family: "Montserrat", sans-serif;
                 line-height: 22px;
             }
         }
@@ -49,37 +49,36 @@
         }
     }
 
-    .con-right {
-        img {
+    img {
+        width: 530px;
+        height: 530px;
+        margin-top: -70px;
+        margin-right: -50px;
+
+        @media (max-width: 1023px) {
+            width: 450px;
+            height: 450px;
+            margin-left: -30px;
+            margin-right: -30px;
+        }
+
+        @media (max-width: 769px) {
             width: 530px;
             height: 530px;
-            margin-top: -70px;
-            margin-right: -50px;
+            margin-top: 25px;
+            margin-left: -30px;
+            margin-right: 0;
+        }
 
-            @media (max-width: 1023px) {
-                width: 450px;
-                height: 450px;
-                margin-left: -30px;
-                margin-right: -30px;
-            }
+        @media (max-width: 480px) {
+            width: 400px;
+            height: 400px;
+        }
 
-            @media (max-width: 769px) {
-                width: 530px;
-                height: 530px;
-                margin-top: 25px;
-                margin-left: -30px;
-            }
-
-            @media (max-width: 480px) {
-                width: 400px;
-                height: 400px;
-            }
-
-            @media (max-width: 320px) {
-                width: 250px;
-                height: 250px;
-                margin-top: -80px;
-            }
+        @media (max-width: 320px) {
+            width: 250px;
+            height: 250px;
+            margin-top: -80px;
         }
     }
 
@@ -95,7 +94,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        padding: 80px 10px;
+        padding: 80px 0;
     }
 }
 

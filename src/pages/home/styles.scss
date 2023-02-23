@@ -1,6 +1,12 @@
 .home {
     background-color: #1c1c1c;
     color: #fff;
+
+    .background-image {
+        background-image: url("../../assets/images/Background.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
 }
 
 // @media (max-width: 1024px) {
