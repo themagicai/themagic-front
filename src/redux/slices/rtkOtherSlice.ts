@@ -1,25 +1,25 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../index";
-import { api } from "../../app/services/auth";
+// import { createSlice } from "@reduxjs/toolkit";
+// import { RootState } from "../index";
+// import { api } from "../../api/api";
 
-const slice = createSlice({
-    name: "auth",
-    initialState: { user: null, token: null } as {
-        user: null | any;
-        token: null | string;
-    },
-    reducers: {},
-    extraReducers: (builder) => {
-        builder.addMatcher(
-            api.endpoints.login.matchFulfilled,
-            (state, { payload }) => {
-                state.token = payload.result.token;
-                state.user = payload.result.user;
-            }
-        );
-    },
-});
+// const slice = createSlice({
+//     name: "auth",
+//     initialState: { user: null, token: null } as {
+//         user: null | any;
+//         token: null | string;
+//     },
+//     reducers: {},
+//     extraReducers: (builder) => {
+//         builder.addMatcher(
+//             api.endpoints.login.matchFulfilled,
+//             (state, { payload }) => {
+//                 state.token = payload.result.token;
+//                 state.user = payload.result.user;
+//             }
+//         );
+//     },
+// });
 
-export default slice.reducer;
+// export default slice.reducer;
 
-export const selectCurrentUser = (state: RootState) => state.auth.user;
+// export const selectCurrentUser = (state: RootState) => state.auth.user;

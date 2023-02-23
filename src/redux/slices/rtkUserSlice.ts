@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../index";
 
 const slice = createSlice({
     name: "auth",
@@ -24,5 +23,3 @@ const slice = createSlice({
 export const { setCredentials } = slice.actions;
 
 export default slice.reducer;
-
-export const selectCurrentUser = (state: RootState) => state.auth.user;
