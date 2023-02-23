@@ -38,24 +38,23 @@ export const Cards = () => {
                 <Typography variant="h4" className="Typography1">
                     Generate any type of content
                 </Typography>
-                <br />
                 <Typography variant="h4" className="Typography2">
                     10 times faster
                 </Typography>
             </div>
             <Card className="cards-container">
                 {cardInfo.map((e: any) => (
-                    <CardActionArea key={e.id} className="cards-area">
-                        <CardContent>
+                    <CardActionArea key={e.id} className="CardActionArea">
+                        <CardContent className="CardContent">
                             <Typography
                                 color="white"
                                 variant="h5"
-                                className="Typography1"
+                                className="Typography3"
                             >
                                 {e.title}
                             </Typography>
                             <br />
-                            <Typography color="#999" className="Typography2">
+                            <Typography color="#999" className="Typography4">
                                 {e.desc}
                             </Typography>
                         </CardContent>
