@@ -62,9 +62,9 @@ export const SignUp = () => {
                                     edge="end"
                                 >
                                     {showPassword ? (
-                                        <VisibilityOff />
-                                    ) : (
                                         <Visibility />
+                                    ) : (
+                                        <VisibilityOff />
                                     )}
                                 </IconButton>
                             </InputAdornment>
@@ -85,9 +85,9 @@ export const SignUp = () => {
                                     edge="end"
                                 >
                                     {showPassword ? (
-                                        <VisibilityOff />
-                                    ) : (
                                         <Visibility />
+                                    ) : (
+                                        <VisibilityOff />
                                     )}
                                 </IconButton>
                             </InputAdornment>

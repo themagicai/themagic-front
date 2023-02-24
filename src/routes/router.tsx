@@ -4,7 +4,15 @@ import { HomePage, CVPage } from "../pages";
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <HomePage />
+        element: (
+            <>
+                <HomePage />
+            </>
+        ),
+    },
+    {
+        path: "sign-up",
+        element: <div>Login</div>,
     },
     {
         path: "cv",
