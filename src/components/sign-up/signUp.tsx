@@ -14,7 +14,7 @@ import {
 import { VisibilityOff, Visibility } from "@mui/icons-material";
 
 export const SignUp = () => {
-    const [showPassword, setShowPassword] = useState(false);
+    const [showPassword, setShowPassword] = useState(true);
 
     const handleClickShowPassword = () => {
         setShowPassword((show) => !show);
