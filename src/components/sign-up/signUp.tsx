@@ -12,6 +12,7 @@ import {
     IconButton,
 } from "@mui/material";
 import { VisibilityOff, Visibility } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 export const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -25,7 +26,7 @@ export const SignUp = () => {
     };
 
     return (
-        <div className="sign-up">
+        <div className="sign-up" id="sign-up">
             <Box component="form" noValidate autoComplete="off" className="Box">
                 <Typography variant="h4" className="Typography1">
                     Try now for <span>FREE!</span>
@@ -119,10 +120,15 @@ export const SignUp = () => {
                     type="text"
                     required
                 /> */}
-
-                <Button variant="contained" color="primary" className="Button">
-                    Try now
-                </Button>
+                <Link to="">
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        className="Button"
+                    >
+                        Try now
+                    </Button>
+                </Link>
             </Box>
         </div>
     );

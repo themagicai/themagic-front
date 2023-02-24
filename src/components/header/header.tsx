@@ -2,6 +2,7 @@ import { useState, MouseEvent } from "react";
 import "./styles.scss";
 import { Button, Menu, MenuItem, Fade } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -40,15 +41,23 @@ export const Header = () => {
                     onClose={handleClose}
                     TransitionComponent={Fade}
                 >
-                    <MenuItem onClick={handleClose}>Login</MenuItem>
-                    <MenuItem onClick={handleClose}>SignUp</MenuItem>
+                    <MenuItem onClick={handleClose}>
+                        <Link to="">Log in</Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                        <Link to="">Sign Up</Link>
+                    </MenuItem>
                 </Menu>
-                <Button className="Button1" variant="contained">
-                    Log in
-                </Button>
-                <Button className="Button2" variant="contained">
-                    Sign Up
-                </Button>
+                <Link to="">
+                    <Button className="Button1" variant="contained">
+                        Log in
+                    </Button>
+                </Link>
+                <Link to="">
+                    <Button className="Button2" variant="contained">
+                        Sign Up
+                    </Button>
+                </Link>
             </div>
         </div>
     );

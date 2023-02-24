@@ -30,7 +30,7 @@
 
         .CardActionArea {
             background-color: #444;
-            padding: 20px;
+            padding: 10px;
             border-radius: 16px;
 
             .Typography3 {
@@ -38,7 +38,15 @@
             }
 
             .Typography4 {
+                width: 64%;
 
+                @media (max-width: 1024px) {
+                    width: 72%;
+                }
+
+                @media (max-width: 769px) {
+                    width: 90%;
+                }
             }
         }
 
