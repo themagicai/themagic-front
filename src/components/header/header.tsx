@@ -32,6 +32,7 @@ export const Header = () => {
                     <MenuIcon className="MenuIcon" />
                 </Button>
                 <Menu
+                    className="Menu"
                     id="fade-menu"
                     MenuListProps={{ "aria-labelledby": "fade-button" }}
                     anchorEl={anchorEl}
