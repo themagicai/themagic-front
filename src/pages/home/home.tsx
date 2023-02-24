@@ -8,7 +8,7 @@ import {
     SignUp,
     Footer,
 } from "../../components";
-// import { CVPage } from "../";
+import { CVPage } from "../";
 
 export const HomePage = () => {
     return (
