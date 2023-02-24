@@ -14,7 +14,7 @@ import {
 import { VisibilityOff, Visibility } from "@mui/icons-material";
 
 export const SignUp = () => {
-    const [showPassword, setShowPassword] = useState(true);
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleClickShowPassword = () => {
         setShowPassword((show) => !show);
@@ -62,9 +62,9 @@ export const SignUp = () => {
                                     edge="end"
                                 >
                                     {showPassword ? (
-                                        <Visibility />
-                                    ) : (
                                         <VisibilityOff />
+                                    ) : (
+                                        <Visibility />
                                     )}
                                 </IconButton>
                             </InputAdornment>
@@ -85,9 +85,9 @@ export const SignUp = () => {
                                     edge="end"
                                 >
                                     {showPassword ? (
-                                        <Visibility />
-                                    ) : (
                                         <VisibilityOff />
+                                    ) : (
+                                        <Visibility />
                                     )}
                                 </IconButton>
                             </InputAdornment>
