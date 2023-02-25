@@ -26,7 +26,7 @@ export const SignUp = () => {
     };
 
     return (
-        <div className="sign-up" id="sign-up">
+        <div className="sign-up">
             <Box component="form" noValidate autoComplete="off" className="Box">
                 <Typography variant="h4" className="Typography1">
                     Try now for <span>FREE!</span>
@@ -120,7 +120,11 @@ export const SignUp = () => {
                     type="text"
                     required
                 /> */}
-                <Button variant="contained" color="primary" className="Button">
+                <Button
+                    className="Button"
+                    variant="contained"
+                    color="primary"
+                >
                     <Link to="cv" className="Link">
                         Try now
                     </Link>

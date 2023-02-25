@@ -1,7 +1,7 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import error404 from "../../assets/images/error.png";
 
-const styles: React.CSSProperties | undefined = {
+const styles: CSSProperties = {
     textAlign: "center",
 };
 
