@@ -125,7 +125,7 @@ export const SignUp = () => {
                     variant="contained"
                     color="primary"
                 >
-                    <Link to="cv" className="Link">
+                    <Link to="" className="Link">
                         Try now
                     </Link>
                 </Button>
