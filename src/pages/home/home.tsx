@@ -8,7 +8,6 @@ import {
     SignUp,
     Footer,
 } from "../../components";
-import { CVPage } from "../";
 
 export const HomePage = () => {
     return (
@@ -21,7 +20,6 @@ export const HomePage = () => {
                 <SignUp />
             </div>
             <Footer />
-            {/* <CVPage /> */}
         </div>
     );
 };

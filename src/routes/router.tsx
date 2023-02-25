@@ -1,5 +1,5 @@
 import { createBrowserRouter, Link } from "react-router-dom";
-import { HomePage, CVPage } from "../pages";
+import { HomePage, LoginPage, CVPage, ErrorPage } from "../pages";
 
 export const router = createBrowserRouter([
     {
@@ -11,11 +11,15 @@ export const router = createBrowserRouter([
         ),
     },
     {
-        path: "sign-up",
-        element: <div>Login</div>,
+        path: "login",
+        element: <LoginPage />,
     },
     {
         path: "cv",
         element: <CVPage />,
+    },
+    {
+        path: "*",
+        element: <ErrorPage />,
     },
 ]);
