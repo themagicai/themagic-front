@@ -120,15 +120,11 @@ export const SignUp = () => {
                     type="text"
                     required
                 /> */}
-                <Link to="">
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        className="Button"
-                    >
+                <Button variant="contained" color="primary" className="Button">
+                    <Link to="" className="Link">
                         Try now
-                    </Button>
-                </Link>
+                    </Link>
+                </Button>
             </Box>
         </div>
     );

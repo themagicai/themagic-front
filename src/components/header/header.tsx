@@ -41,23 +41,15 @@ export const Header = () => {
                     onClose={handleClose}
                     TransitionComponent={Fade}
                 >
-                    <MenuItem onClick={handleClose}>
-                        <Link to="">Log in</Link>
-                    </MenuItem>
-                    <MenuItem onClick={handleClose}>
-                        <Link to="">Sign Up</Link>
-                    </MenuItem>
+                    <MenuItem onClick={handleClose}>Login</MenuItem>
+                    <MenuItem onClick={handleClose}>SignUp</MenuItem>
                 </Menu>
-                <Link to="">
-                    <Button className="Button1" variant="contained">
-                        Log in
-                    </Button>
-                </Link>
-                <Link to="">
-                    <Button className="Button2" variant="contained">
-                        Sign Up
-                    </Button>
-                </Link>
+                <Button className="Button1" variant="contained">
+                    <Link to="" className="Link">Log in</Link>
+                </Button>
+                <Button className="Button2" variant="contained">
+                    <Link to="" className="Link">Sign Up</Link>
+                </Button>
             </div>
         </div>
     );

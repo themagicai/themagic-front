@@ -29,14 +29,17 @@
         }
 
         .Button {
+            .Link {
+                font-family: "Montserrat", sans-serif;
+                text-transform: none;
+                font-weight: 900;
+                font-size: 15px;
+                color: #fff;
+            }
             width: 125px;
             height: 45px;
             background: linear-gradient(to right, #139ebc, #aa1ecd);
             border-radius: 30px;
-            font-family: "Montserrat", sans-serif;
-            text-transform: none;
-            font-weight: 900;
-            font-size: 15px;
         }
     }
 }
