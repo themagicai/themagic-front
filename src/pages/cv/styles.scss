@@ -2,13 +2,13 @@
 
 $colorBack: #d9d9d9;
 $colorBackInput: #353535;
-$colorPlaceholderText: #6f6f6f;
+$colorInputText: #6f6f6f;
 $inputBorderRadius: 12px;
 
 @mixin TextField {
     background-color: $colorBackInput;
     border-radius: $inputBorderRadius;
-    color: $colorPlaceholderText;
+    color: $colorInputText;
 }
 
 @mixin TextFieldBig {
@@ -75,16 +75,17 @@ $inputBorderRadius: 12px;
 
                     .FormControlSelectInput {
                         width: 225px;
-                        color: $colorPlaceholderText;
+                        color: $colorInputText;
+                        column-gap: 20px;
+
+                        .InputLabel {
+                            color: $colorInputText;
+                        }
 
                         .SelectInput {
-                            color: $colorPlaceholderText;
+                            color: $colorInputText;
+                            background-color: $colorBackInput;
                             border-radius: $inputBorderRadius;
-
-                            .MenuItem {
-                                background-color: $colorBackInput;
-                                color: $colorPlaceholderText;
-                            }
                         }
                     }
 

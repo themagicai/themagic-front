@@ -30,7 +30,7 @@ export const SignUp = () => {
     };
 
     return (
-        <div className="sign-up">
+        <Box className="sign-up">
             <Box component="form" noValidate autoComplete="off" className="Box">
                 <Typography variant="h4" className="Typography1">
                     Try now for <span>FREE!</span>
@@ -136,12 +136,13 @@ export const SignUp = () => {
                     className="Button"
                     variant="contained"
                     color="primary"
+                    // type="submit"
                 >
                     <Link to="" className="Link">
                         Try now
                     </Link>
                 </Button>
             </Box>
-        </div>
+        </Box>
     );
 };

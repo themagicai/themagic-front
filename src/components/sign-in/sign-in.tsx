@@ -14,13 +14,13 @@ const style = {
     p: 4,
 };
 
-export const Login = () => {
+export const SignIn = () => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
     return (
-        <div className="login">
+        <Box className="login">
             <Button onClick={handleOpen}>Open modal</Button>
             <Modal
                 open={open}
@@ -42,6 +42,6 @@ export const Login = () => {
                     </Typography>
                 </Box>
             </Modal>
-        </div>
+        </Box>
     );
 };

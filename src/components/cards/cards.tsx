@@ -1,6 +1,12 @@
 import React from "react";
 import "./styles.scss";
-import { Typography, Card, CardActionArea, CardContent } from "@mui/material";
+import {
+    Box,
+    Typography,
+    Card,
+    CardActionArea,
+    CardContent,
+} from "@mui/material";
 
 interface cardInfoTypes {
     id: number;
@@ -33,15 +39,15 @@ const cardInfo: Array<cardInfoTypes> = [
 
 export const Cards = () => {
     return (
-        <div className="cards">
-            <div className="titles">
+        <Box className="cards">
+            <Box className="titles">
                 <Typography variant="h4" className="Typography1">
                     Generate any type of content
                 </Typography>
                 <Typography variant="h4" className="Typography2">
                     10 times faster
                 </Typography>
-            </div>
+            </Box>
             <Card className="cards-container">
                 {cardInfo.map((e: any) => (
                     <CardActionArea key={e.id} className="CardActionArea">
@@ -61,6 +67,6 @@ export const Cards = () => {
                     </CardActionArea>
                 ))}
             </Card>
-        </div>
+        </Box>
     );
 };

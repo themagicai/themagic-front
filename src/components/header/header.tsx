@@ -1,6 +1,6 @@
 import { useState, MouseEvent } from "react";
 import "./styles.scss";
-import { Button, Menu, MenuItem, Fade } from "@mui/material";
+import { Box, Button, Menu, MenuItem, Fade } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
@@ -17,11 +17,11 @@ export const Header = () => {
     };
 
     return (
-        <div className="header">
-            <div className="nav-left">
+        <header className="header">
+            <Box className="nav-left">
                 <h1>THE MAGIC AI</h1>
-            </div>
-            <div className="nav-right">
+            </Box>
+            <Box className="nav-right">
                 <Button
                     className="MenuButtonIcon"
                     id="fade-button"
@@ -45,12 +45,16 @@ export const Header = () => {
                     <MenuItem onClick={handleClose}>SignUp</MenuItem>
                 </Menu>
                 <Button className="Button1" variant="contained">
-                    <Link to="#" className="Link">Log in</Link>
+                    <Link to="" className="Link">
+                        Log in
+                    </Link>
                 </Button>
                 <Button className="Button2" variant="contained">
-                    <Link to="#" className="Link">Sign Up</Link>
+                    <Link to="" className="Link">
+                        Sign Up
+                    </Link>
                 </Button>
-            </div>
-        </div>
+            </Box>
+        </header>
     );
 };

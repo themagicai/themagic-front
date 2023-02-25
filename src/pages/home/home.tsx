@@ -8,18 +8,19 @@ import {
     SignUp,
     Footer,
 } from "../../components";
+import { Box } from "@mui/material";
 
 export const HomePage = () => {
     return (
-        <div className="home">
+        <Box className="home">
             <Header />
-            <div className="background-image">
+            <Box className="background-image">
                 <Banner />
                 <VideoConcept />
                 <Cards />
                 <SignUp />
-            </div>
+            </Box>
             <Footer />
-        </div>
+        </Box>
     );
 };

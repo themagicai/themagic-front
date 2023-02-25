@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./styles.scss";
 import { Header, Footer } from "../../components";
 import {
+    Box,
     Typography,
     FormControl,
     OutlinedInput,
@@ -9,6 +10,7 @@ import {
     Button,
     Select,
     MenuItem,
+    InputLabel,
 } from "@mui/material";
 
 export const CVPage = () => {
@@ -19,16 +21,16 @@ export const CVPage = () => {
     };
 
     return (
-        <div className="cv">
+        <Box className="cv">
             <Header />
-            <div className="cv-container">
-                <div className="cv-contain">
-                    <div className="vacancy-requirement">
+            <Box className="cv-container">
+                <Box className="cv-contain">
+                    <Box className="vacancy-requirement">
                         <Typography className="Typography" variant="h4">
                             Vacancy requirement
                         </Typography>
                         <br />
-                        <div className="twoTextField">
+                        <Box className="twoTextField">
                             <FormControl>
                                 <OutlinedInput
                                     className="TextField"
@@ -49,7 +51,7 @@ export const CVPage = () => {
                                     size="small"
                                 />
                             </FormControl>
-                        </div>
+                        </Box>
                         <br />
                         <FormControl>
                             <OutlinedInput
@@ -61,14 +63,17 @@ export const CVPage = () => {
                                 size="small"
                             />
                         </FormControl>
-                    </div>
+                    </Box>
                     <br />
-                    <div className="personal-information">
+                    <Box className="personal-information">
                         <Typography className="Typography" variant="h4">
                             Personal information
                         </Typography>
-                        <div className="personalInputs">
+                        <Box className="personalInputs">
                             <FormControl className="FormControlSelectInput">
+                                <InputLabel className="InputLabel" size="small">
+                                    Grade
+                                </InputLabel>
                                 <Select
                                     className="SelectInput"
                                     value={age}
@@ -76,8 +81,8 @@ export const CVPage = () => {
                                     displayEmpty
                                     color="secondary"
                                     size="small"
+                                    label="Grade"
                                 >
-                                    <MenuItem value="">Grade</MenuItem>
                                     <MenuItem className="MenuItem">
                                         One
                                     </MenuItem>
@@ -99,7 +104,7 @@ export const CVPage = () => {
                                     size="small"
                                 />
                             </FormControl>
-                        </div>
+                        </Box>
                         <FormControl>
                             <OutlinedInput
                                 className="TextFieldBig"
@@ -111,16 +116,16 @@ export const CVPage = () => {
                             />
                         </FormControl>
 
-                        <div className="Buttons">
+                        <Box className="Buttons">
                             <Button className="Button1" variant="contained">
                                 Get cover letter
                             </Button>
                             <Button className="Button2" variant="contained">
                                 Get CV
                             </Button>
-                        </div>
-                    </div>
-                    <div className="result">
+                        </Box>
+                    </Box>
+                    <Box className="result">
                         <Typography className="Typography" variant="h4">
                             Result
                         </Typography>
@@ -134,15 +139,15 @@ export const CVPage = () => {
                             />
                         </FormControl>
 
-                        <div className="button">
+                        <Box className="button">
                             <Button className="Button" variant="contained">
                                 Download
                             </Button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        </Box>
+                    </Box>
+                </Box>
+            </Box>
             <Footer />
-        </div>
+        </Box>
     );
 };
