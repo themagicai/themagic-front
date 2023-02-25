@@ -1,7 +1,8 @@
+export const API = process.env.REACT_APP_API;
 import axios from "axios";
 
-const instance = axios.create({
-    baseURL: 'http://api.themagicai.com/api/',
+export const instance = axios.create({
+    baseURL: API,
     timeout: 1000,
     headers: {
         'Content-Type': 'application/json'
