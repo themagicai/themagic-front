@@ -16,6 +16,10 @@ import { Link } from "react-router-dom";
 
 export const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const [name, setName] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [password1, setPassword1] = useState<string>("");
+    const [password2, setPassword2] = useState<string>("");
 
     const handleClickShowPassword = () => {
         setShowPassword((show) => !show);
@@ -38,6 +42,8 @@ export const SignUp = () => {
                         color="secondary"
                         placeholder="Name"
                         required
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                     />
                 </FormControl>
                 <FormControl>
@@ -47,6 +53,8 @@ export const SignUp = () => {
                         color="secondary"
                         placeholder="email"
                         required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                 </FormControl>
                 <FormControl>
@@ -55,6 +63,8 @@ export const SignUp = () => {
                         type={showPassword ? "text" : "password"}
                         color="secondary"
                         placeholder="Create password"
+                        value={password1}
+                        onChange={(e) => setPassword1(e.target.value)}
                         endAdornment={
                             <InputAdornment position="end">
                                 <IconButton
@@ -78,6 +88,8 @@ export const SignUp = () => {
                         type={showPassword ? "text" : "password"}
                         color="secondary"
                         placeholder="Confirm password"
+                        value={password2}
+                        onChange={(e) => setPassword2(e.target.value)}
                         endAdornment={
                             <InputAdornment position="end">
                                 <IconButton
