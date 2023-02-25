@@ -45,10 +45,10 @@ export const Header = () => {
                     <MenuItem onClick={handleClose}>SignUp</MenuItem>
                 </Menu>
                 <Button className="Button1" variant="contained">
-                    <Link to="" className="Link">Log in</Link>
+                    <Link to="#" className="Link">Log in</Link>
                 </Button>
                 <Button className="Button2" variant="contained">
-                    <Link to="" className="Link">Sign Up</Link>
+                    <Link to="#" className="Link">Sign Up</Link>
                 </Button>
             </div>
         </div>

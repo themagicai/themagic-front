@@ -1,10 +1,11 @@
 import React from "react";
-import "./login.scss";
+import "./styles.scss";
+import { Login } from "../../components"
 
 export const LoginPage = () => {
     return (
         <div className="login">
-            <h1>Login</h1>
+            <Login />
         </div>
     )
 }
