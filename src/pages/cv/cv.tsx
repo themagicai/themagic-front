@@ -11,6 +11,7 @@ import {
     Select,
     MenuItem,
     InputLabel,
+    TextareaAutosize,
 } from "@mui/material";
 
 export const CVPage = () => {
@@ -29,9 +30,8 @@ export const CVPage = () => {
                         <Typography className="Typography" variant="h4">
                             Vacancy requirement
                         </Typography>
-                        <br />
                         <Box className="twoTextField">
-                            <FormControl>
+                            <FormControl className="FormControl">
                                 <OutlinedInput
                                     className="TextField"
                                     type="text"
@@ -41,7 +41,7 @@ export const CVPage = () => {
                                     size="small"
                                 />
                             </FormControl>
-                            <FormControl>
+                            <FormControl className="FormControl">
                                 <OutlinedInput
                                     className="TextField"
                                     type="Email"
@@ -52,25 +52,21 @@ export const CVPage = () => {
                                 />
                             </FormControl>
                         </Box>
-                        <br />
                         <FormControl>
-                            <OutlinedInput
-                                className="TextFieldBig"
-                                type="Email"
+                            <TextareaAutosize
+                                className="TextareaAutosize"
                                 color="secondary"
                                 placeholder="Enter summary about yourself, job experience, education, licenses & certifications..."
                                 required
-                                size="small"
                             />
                         </FormControl>
                     </Box>
-                    <br />
                     <Box className="personal-information">
                         <Typography className="Typography" variant="h4">
                             Personal information
                         </Typography>
-                        <Box className="personalInputs">
-                            <FormControl className="FormControlSelectInput">
+                        <Box className="twoPersonalInputs">
+                            <FormControl className="FormControl">
                                 <InputLabel className="InputLabel" size="small">
                                     Grade
                                 </InputLabel>
@@ -84,13 +80,25 @@ export const CVPage = () => {
                                     label="Grade"
                                 >
                                     <MenuItem className="MenuItem">
-                                        One
+                                        Specialist
                                     </MenuItem>
                                     <MenuItem className="MenuItem">
-                                        Two
+                                        Manager
                                     </MenuItem>
                                     <MenuItem className="MenuItem">
-                                        Three
+                                        Senior manager
+                                    </MenuItem>
+                                    <MenuItem className="MenuItem">
+                                        Head
+                                    </MenuItem>
+                                    <MenuItem className="MenuItem">
+                                        Director
+                                    </MenuItem>
+                                    <MenuItem className="MenuItem">
+                                        Executive
+                                    </MenuItem>
+                                    <MenuItem className="MenuItem">
+                                        Other...
                                     </MenuItem>
                                 </Select>
                             </FormControl>
@@ -106,16 +114,12 @@ export const CVPage = () => {
                             </FormControl>
                         </Box>
                         <FormControl>
-                            <OutlinedInput
-                                className="TextFieldBig"
-                                type="Email"
-                                color="secondary"
+                            <TextareaAutosize
+                                className="TextareaAutosize"
                                 placeholder="Enter summary about yourself, job experience, education, licenses & certifications..."
                                 required
-                                size="small"
                             />
                         </FormControl>
-
                         <Box className="Buttons">
                             <Button className="Button1" variant="contained">
                                 Get cover letter
@@ -130,15 +134,12 @@ export const CVPage = () => {
                             Result
                         </Typography>
                         <FormControl>
-                            <OutlinedInput
-                                className="TextFieldBig"
-                                type="Email"
-                                color="secondary"
+                            <TextareaAutosize
+                                className="TextareaAutosize"
+                                placeholder=""
                                 required
-                                size="small"
                             />
                         </FormControl>
-
                         <Box className="button">
                             <Button className="Button" variant="contained">
                                 Download

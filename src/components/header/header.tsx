@@ -1,4 +1,4 @@
-import { useState, MouseEvent } from "react";
+import { useState } from "react";
 import "./styles.scss";
 import { Box, Button, Menu, MenuItem, Fade } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
@@ -8,12 +8,17 @@ export const Header = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
 
-    const handleClick = (event: MouseEvent<HTMLElement>) => {
+    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
     };
 
-    const handleClose = () => {
+    const handleClose: React.MouseEventHandler<HTMLLIElement> = () => {
         setAnchorEl(null);
+    };
+
+    const toRegister = () => {
+        const target: any = document.getElementById("#register");
+        target.scrollIntoView({ behavior: "smooth" });
     };
 
     return (
@@ -41,16 +46,35 @@ export const Header = () => {
                     onClose={handleClose}
                     TransitionComponent={Fade}
                 >
-                    <MenuItem onClick={handleClose}>Login</MenuItem>
-                    <MenuItem onClick={handleClose}>SignUp</MenuItem>
+                    <MenuItem className="MenuItem" onClick={handleClose}>
+                        <Link to="login" className="Link">
+                            Log in
+                        </Link>
+                    </MenuItem>
+                    <MenuItem 
+                        className="MenuItem"
+                        // onClick={handleClose}
+                    >
+                        <Link
+                            to="register#register"
+                            className="Link"
+                            onClick={toRegister}
+                        >
+                            Sign Up
+                        </Link>
+                    </MenuItem>
                 </Menu>
                 <Button className="Button1" variant="contained">
-                    <Link to="" className="Link">
+                    <Link to="login" className="Link">
                         Log in
                     </Link>
                 </Button>
-                <Button className="Button2" variant="contained">
-                    <Link to="" className="Link">
+                <Button
+                    className="Button2"
+                    variant="contained"
+                    onClick={toRegister}
+                >
+                    <Link to="register#register" className="Link">
                         Sign Up
                     </Link>
                 </Button>

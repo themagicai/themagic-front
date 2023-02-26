@@ -5,7 +5,7 @@ import {
     Banner,
     VideoConcept,
     Cards,
-    SignUp,
+    Register,
     Footer,
 } from "../../components";
 import { Box } from "@mui/material";
@@ -18,7 +18,7 @@ export const HomePage = () => {
                 <Banner />
                 <VideoConcept />
                 <Cards />
-                <SignUp />
+                <Register />
             </Box>
             <Footer />
         </Box>

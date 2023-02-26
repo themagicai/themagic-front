@@ -44,6 +44,16 @@ $btn_color2: #000;
             }
         }
 
+        @media (max-width: 480px) {
+            .Menu {
+                .MenuItem {
+                    .Link {
+                        color: #000;
+                    }
+                }
+            }
+        }
+
         .Button1 {
             border-radius: $btn_radius;
             border: 1px solid #fff;

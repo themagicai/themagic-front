@@ -1,15 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from '@reduxjs/toolkit/query';
-import userReducer from "./slices/userSlice";
-import { pokemonApi } from './slices/pokemonSlice';
+import userReducer from "./auth/auth.slice";
+import { authApi } from "./auth/auth.api";
 
 export const store = configureStore({
     reducer: {
         user: userReducer,
-        [pokemonApi.reducerPath]: pokemonApi.reducer,
+        [authApi.reducerPath]: authApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(pokemonApi.middleware),
+        getDefaultMiddleware().concat(authApi.middleware),
 });
 
 setupListeners(store.dispatch);

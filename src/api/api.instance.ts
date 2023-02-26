@@ -1,4 +1,4 @@
-export const API = process.env.REACT_APP_API;
+export const API = import.meta.env.MODE;
 import axios from "axios";
 
 export const instance = axios.create({

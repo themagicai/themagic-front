@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import "./styles.scss";
 import { Box, Button, Typography, Modal } from "@mui/material";
 
@@ -14,8 +14,8 @@ const style = {
     p: 4,
 };
 
-export const SignIn = () => {
-    const [open, setOpen] = React.useState(false);
+export const Login = () => {
+    const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 

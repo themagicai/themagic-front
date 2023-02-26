@@ -6,7 +6,7 @@ export interface UserState {
     access: string | null;
     refresh: string | null;
     info: {
-        full_name: string | null;
+        fullName: string | null;
         email: string | null;
         password: string | null;
     };
@@ -18,7 +18,7 @@ const initialState: UserState = {
     access: null,
     refresh: null,
     info: {
-        full_name: null,
+        fullName: null,
         email: null,
         password: null,
     },

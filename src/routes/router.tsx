@@ -1,6 +1,6 @@
 import { createBrowserRouter, Link } from "react-router-dom";
 import { HomePage, CVPage, ErrorPage } from "../pages";
-import { SignIn, SignUp } from "../components";
+import { Layout, Login, Register } from "../components";
 
 export const router = createBrowserRouter([
     {
@@ -8,18 +8,13 @@ export const router = createBrowserRouter([
         element: <HomePage />,
         children: [
             {
-                path: 'auth',
-                children: [
-                    {
-                        path: 'sign-in',
-                        element: <SignIn />
-                    },
-                    {
-                        path: 'sign-up',
-                        element: <SignUp />
-                    },
-                ],
-            }
+                path: 'login',
+                element: <Login />
+            },
+            {
+                path: 'register',
+                element: <Register />
+            },
         ]
     },
     {
