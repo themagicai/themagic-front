@@ -1,4 +1,4 @@
-import { MouseEvent, useState } from "react";
+import React, { useState } from "react";
 import "./styles.scss";
 import {
     Button,
@@ -22,13 +22,11 @@ export const Register = () => {
     const [password1, setPassword1] = useState<string>("");
     // const [password2, setPassword2] = useState<string>("");
 
-    const handleClickShowPassword = () => {
-        setShowPassword((show) => !show);
-    };
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
 
-    const handleMouseDownPassword = (event: MouseEvent<HTMLButtonElement>) => {
-        event.preventDefault();
-    };
+    const handleMouseDownPassword = (
+        event: React.MouseEvent<HTMLButtonElement>
+    ) => event.preventDefault();
 
     return (
         <Box className="register" id="#register">

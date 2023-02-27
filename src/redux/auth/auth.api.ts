@@ -4,24 +4,27 @@ export const authApi = api.injectEndpoints({
     endpoints: (builder) => ({
         registerUsers: builder.mutation({
             query: (body) => ({
-                url: "register",
+                url: "api/register",
                 method: "POST",
                 body,
             }),
+            invalidatesTags: [],
         }),
         loginUsers: builder.mutation({
             query: (body) => ({
-                url: "login",
+                url: "api/login",
                 method: "POST",
                 body,
             }),
+            invalidatesTags: [],
         }),
         logoutUsers: builder.mutation({
             query: (body) => ({
-                url: "logout",
+                url: "api/logout",
                 method: "POST",
                 body,
             }),
+            invalidatesTags: [],
         }),
     }),
 });

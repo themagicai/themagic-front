@@ -3,18 +3,17 @@ import "./styles.scss";
 import { Box, Button, Menu, MenuItem, Fade } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import { Login } from "../login";
 
 export const Header = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
 
-    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    const handleClick = (event: React.MouseEvent<HTMLElement>) =>
         setAnchorEl(event.currentTarget);
-    };
 
-    const handleClose: React.MouseEventHandler<HTMLLIElement> = () => {
+    const handleClose: React.MouseEventHandler<HTMLLIElement> = () =>
         setAnchorEl(null);
-    };
 
     const toRegister = () => {
         const target: any = document.getElementById("#register");
@@ -51,7 +50,7 @@ export const Header = () => {
                             Log in
                         </Link>
                     </MenuItem>
-                    <MenuItem 
+                    <MenuItem
                         className="MenuItem"
                         // onClick={handleClose}
                     >
@@ -64,11 +63,7 @@ export const Header = () => {
                         </Link>
                     </MenuItem>
                 </Menu>
-                <Button className="Button1" variant="contained">
-                    <Link to="login" className="Link">
-                        Log in
-                    </Link>
-                </Button>
+                <Login />
                 <Button
                     className="Button2"
                     variant="contained"

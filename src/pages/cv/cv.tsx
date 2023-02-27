@@ -17,9 +17,8 @@ import {
 export const CVPage = () => {
     const [age, setAge] = useState<string>("");
 
-    const handleChange = (event: SelectChangeEvent) => {
+    const handleChange = (event: SelectChangeEvent) =>
         setAge(event.target.value as string);
-    };
 
     return (
         <Box className="cv">
@@ -53,10 +52,10 @@ export const CVPage = () => {
                             </FormControl>
                         </Box>
                         <FormControl>
-                            <TextareaAutosize
-                                className="TextareaAutosize"
+                            <OutlinedInput
+                                className="TextFieldBig"
                                 color="secondary"
-                                placeholder="Enter summary about yourself, job experience, education, licenses & certifications..."
+                                placeholder="Enter vacancy requirement"
                                 required
                             />
                         </FormControl>
@@ -65,13 +64,13 @@ export const CVPage = () => {
                         <Typography className="Typography" variant="h4">
                             Personal information
                         </Typography>
-                        <Box className="twoPersonalInputs">
-                            <FormControl className="FormControl">
+                        <Box className="BoxPersonalInputs">
+                            <FormControl className="FormControlInputLabel">
                                 <InputLabel className="InputLabel" size="small">
                                     Grade
                                 </InputLabel>
                                 <Select
-                                    className="SelectInput"
+                                    className="Select"
                                     value={age}
                                     onChange={handleChange}
                                     displayEmpty
@@ -102,21 +101,20 @@ export const CVPage = () => {
                                     </MenuItem>
                                 </Select>
                             </FormControl>
-                            <FormControl className="FormControlSelectInput">
-                                <OutlinedInput
-                                    className="TextField"
-                                    type="Email"
-                                    color="secondary"
-                                    placeholder="Enter vacancy requirement"
+                            <FormControl className="FormControlTextareaAutosize">
+                                <TextareaAutosize
+                                    maxRows={3}
+                                    className="TextareaAutosize"
+                                    placeholder="Enter your skills"
                                     required
-                                    size="small"
                                 />
                             </FormControl>
                         </Box>
-                        <FormControl>
-                            <TextareaAutosize
-                                className="TextareaAutosize"
+                        <FormControl className="FormControlOutlinedInput">
+                            <OutlinedInput
+                                className="TextFieldBig"
                                 placeholder="Enter summary about yourself, job experience, education, licenses & certifications..."
+                                color="secondary"
                                 required
                             />
                         </FormControl>
@@ -133,14 +131,15 @@ export const CVPage = () => {
                         <Typography className="Typography" variant="h4">
                             Result
                         </Typography>
-                        <FormControl>
-                            <TextareaAutosize
-                                className="TextareaAutosize"
+                        <FormControl className="FormControlOutlinedInput">
+                            <OutlinedInput
+                                className="TextFieldBig"
                                 placeholder=""
+                                color="secondary"
                                 required
                             />
                         </FormControl>
-                        <Box className="button">
+                        <Box className="Box">
                             <Button className="Button" variant="contained">
                                 Download
                             </Button>

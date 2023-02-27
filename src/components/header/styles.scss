@@ -54,22 +54,6 @@ $btn_color2: #000;
             }
         }
 
-        .Button1 {
-            border-radius: $btn_radius;
-            border: 1px solid #fff;
-            background-color: $btn_color2;
-
-            .Link {
-                color: $btn_color1;
-                text-transform: none;
-                font-weight: 900;
-            }
-
-            @media (max-width: 480px) {
-                display: none;
-            }
-        }
-
         .Button2 {
             border-radius: $btn_radius;
             background-color: $btn_color1;

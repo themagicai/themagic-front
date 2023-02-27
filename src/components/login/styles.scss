@@ -1,0 +1,48 @@
+$btn_radius: 10px;
+$btn_color1: #fff;
+$btn_color2: #000;
+
+.login {
+    .Button1 {
+        width: 87px;
+        border-radius: $btn_radius;
+        border: 1px solid #fff;
+        background-color: $btn_color2;
+
+        .Link {
+            color: $btn_color1;
+            text-transform: none;
+            font-weight: 900;
+        }
+
+        @media (max-width: 480px) {
+            display: none;
+        }
+    }
+
+    .Modal {
+        .Box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            row-gap: 20px;
+
+            .Typography {
+                
+            }
+
+            .FormControl {
+                .TextField {
+
+                }
+            }
+
+            .Buttons {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                column-gap: 20px;
+            }
+        }
+    }
+}

@@ -10,16 +10,10 @@ $inputBorderRadius: 12px;
     color: $colorInputText;
 }
 
-@mixin TextareaAutosize {
+@mixin TextFieldBig {
     @include TextField;
     width: 700px;
     height: 350px !important;
-    padding: 12px;
-    border: 1px solid rgb(200, 0, 255);
-
-    &::placeholder {
-        font-size: 15px;
-    }
 }
 
 @mixin Button {
@@ -71,8 +65,8 @@ $inputBorderRadius: 12px;
                     }
                 }
 
-                .TextareaAutosize {
-                    @include TextareaAutosize;
+                .TextFieldBig {
+                    @include TextFieldBig;
                 }
             }
 
@@ -85,13 +79,13 @@ $inputBorderRadius: 12px;
                     padding-bottom: 20px;
                 }
 
-                .twoPersonalInputs {
+                .BoxPersonalInputs {
                     display: flex;
                     align-items: center;
                     column-gap: 20px;
                     padding-bottom: 20px;
 
-                    .FormControl {
+                    .FormControlInputLabel {
                         width: 225px;
                         color: $colorInputText;
 
@@ -99,7 +93,7 @@ $inputBorderRadius: 12px;
                             color: $colorInputText;
                         }
 
-                        .SelectInput {
+                        .Select {
                             color: $colorInputText;
                             background-color: $colorBackInput;
                             border-radius: $inputBorderRadius;
@@ -110,13 +104,19 @@ $inputBorderRadius: 12px;
                         }
                     }
 
-                    .TextField {
-                        @include TextField;
+                    .FormControlTextareaAutosize {
+                        .TextareaAutosize {
+                            @include TextField;
+                            max-width: 225px;
+                            padding: 10px;
+                        }
                     }
                 }
 
-                .TextareaAutosize {
-                    @include TextareaAutosize;
+                .FormControlOutlinedInput {
+                    .TextFieldBig {
+                        @include TextFieldBig;
+                    }
                 }
 
                 .Buttons {
@@ -126,13 +126,13 @@ $inputBorderRadius: 12px;
                     margin-top: 20px;
 
                     .Button1 {
-                        width: 200px;
                         @include Button;
+                        width: 200px;
                     }
 
                     .Button2 {
-                        width: 120px;
                         @include Button;
+                        width: 120px;
                     }
                 }
             }
@@ -147,11 +147,13 @@ $inputBorderRadius: 12px;
                     padding-bottom: 20px;
                 }
 
-                .TextareaAutosize {
-                    @include TextareaAutosize;
+                .FormControlOutlinedInput {
+                    .TextFieldBig {
+                        @include TextFieldBig;
+                    }
                 }
 
-                .button {
+                .Box {
                     padding-top: 20px;
 
                     .Button {
@@ -163,15 +165,3 @@ $inputBorderRadius: 12px;
         }
     }
 }
-
-// @media (max-width: 1024px) {
-// }
-
-// @media (max-width: 769px) {
-// }
-
-// @media (max-width: 480px) {
-// }
-
-// @media (max-width: 320px) {
-// }
