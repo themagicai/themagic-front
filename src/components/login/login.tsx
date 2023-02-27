@@ -45,7 +45,7 @@ export const Login = () => {
     return (
         <Box className="login">
             <Button
-                className="Button1"
+                className="Button"
                 // variant="contained"
                 onClick={handleOpen}
             >
@@ -57,13 +57,13 @@ export const Login = () => {
                 className="Modal"
                 open={open}
                 onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
+                // aria-labelledby="modal-modal-title"
+                // aria-describedby="modal-modal-description"
             >
                 <Box sx={style} className="Box">
                     <Typography
                         className="Typography"
-                        id="modal-modal-title"
+                        // id="modal-modal-title"
                         variant="h5"
                         component="h1"
                     >
@@ -106,8 +106,12 @@ export const Login = () => {
                         />
                     </FormControl>
                     <Box className="Buttons">
-                        <Button variant="contained">Cancel</Button>
-                        <Button variant="contained">Ok</Button>
+                        <Button className="Button1" variant="contained">
+                            Cancel
+                        </Button>
+                        <Button className="Button2" variant="contained">
+                            Ok
+                        </Button>
                     </Box>
                 </Box>
             </Modal>

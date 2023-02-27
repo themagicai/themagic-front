@@ -3,7 +3,7 @@ $btn_color1: #fff;
 $btn_color2: #000;
 
 .login {
-    .Button1 {
+    .Button {
         width: 87px;
         border-radius: $btn_radius;
         border: 1px solid #fff;
@@ -28,12 +28,10 @@ $btn_color2: #000;
             row-gap: 20px;
 
             .Typography {
-                
             }
 
             .FormControl {
                 .TextField {
-
                 }
             }
 
@@ -42,6 +40,12 @@ $btn_color2: #000;
                 align-items: center;
                 justify-content: center;
                 column-gap: 20px;
+
+                .Button1 {
+                }
+
+                .Button2 {
+                }
             }
         }
     }
