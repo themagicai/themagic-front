@@ -17,7 +17,6 @@ import { Link } from "react-router-dom";
 export const Register = () => {
     const [showPassword, setShowPassword] = useState<boolean>(false);
     const [name, setName] = useState<string>("");
-    const [username, setUsername] = useState<string>("");
     const [email, setEmail] = useState<string>("");
     const [password1, setPassword1] = useState<string>("");
     // const [password2, setPassword2] = useState<string>("");
@@ -43,17 +42,6 @@ export const Register = () => {
                         required
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                    />
-                </FormControl>
-                <FormControl>
-                    <OutlinedInput
-                        className="TextField"
-                        type="text"
-                        color="secondary"
-                        placeholder="Username"
-                        required
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
                     />
                 </FormControl>
                 <FormControl>
@@ -117,37 +105,7 @@ export const Register = () => {
                         }
                     />
                 </FormControl>
-
-                {/* <TextField
-                    className="TextField"
-                    label="Name"
-                    type="text"
-                    required
-                /> */}
-                {/* <TextField
-                    className="TextField"
-                    label="Email"
-                    type="email"
-                    required
-                /> */}
-                {/* <TextField
-                    className="TextField"
-                    label="Create password"
-                    type="text"
-                    required
-                /> */}
-                {/* <TextField
-                    className="TextField"
-                    label="Confirm password"
-                    type="text"
-                    required
-                /> */}
-                <Button
-                    className="Button"
-                    variant="contained"
-                    color="primary"
-                    // type="submit"
-                >
+                <Button className="Button" variant="contained" color="primary">
                     <Link to="" className="Link">
                         Try now
                     </Link>

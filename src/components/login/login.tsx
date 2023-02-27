@@ -29,7 +29,7 @@ const style = {
 export const Login = () => {
     const [open, setOpen] = useState<boolean>(false);
     const [showPassword, setShowPassword] = useState<boolean>(false);
-    const [username, setUsername] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
 
     const handleOpen = () => setOpen(true);
@@ -53,7 +53,6 @@ export const Login = () => {
                     Log in
                 </Link>
             </Button>
-            {/* <Button onClick={handleOpen}>Open modal</Button> */}
             <Modal
                 className="Modal"
                 open={open}
@@ -73,12 +72,12 @@ export const Login = () => {
                     <FormControl className="FormControl">
                         <OutlinedInput
                             className="TextField"
-                            type="text"
+                            type="Email"
                             color="secondary"
-                            placeholder="Username"
+                            placeholder="Email"
                             required
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                     </FormControl>
                     <FormControl className="FormControl">
@@ -107,17 +106,9 @@ export const Login = () => {
                         />
                     </FormControl>
                     <Box className="Buttons">
-                        <Button variant="contained">
-                            Cancel
-                        </Button>
-                        <Button variant="contained">
-                            Ok
-                        </Button>
+                        <Button variant="contained">Cancel</Button>
+                        <Button variant="contained">Ok</Button>
                     </Box>
-                    {/* <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        Duis mollis, est non commodo luctus, nisi erat porttitor
-                        ligula.
-                    </Typography> */}
                 </Box>
             </Modal>
         </Box>
