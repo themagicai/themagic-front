@@ -1,84 +1,84 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 $btn_radius: 10px;
 $btn_color1: #fff;
 $btn_color2: #000;
 
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 90px;
+  border-bottom: 1px solid #fff;
+  background-color: $btn_color2;
+
+  .nav-left {
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+
+      @media (max-width: 480px) {
+        font-size: 25px;
+      }
+    }
+  }
+
+  .nav-right {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 16px 90px;
-    border-bottom: 1px solid #fff;
-    background-color: $btn_color2;
+    justify-content: center;
+    column-gap: 20px;
 
-    .nav-left {
-        h1 {
-            font-family: "Montserrat", sans-serif;
+    .MenuButtonIcon {
+      display: none;
+      margin-right: -15px;
 
-            @media (max-width: 480px) {
-                font-size: 25px;
-            }
-        }
-    }
+      .MenuIcon {
+        color: #fff;
+        font-size: 30px;
+      }
 
-    .nav-right {
+      @media (max-width: 480px) {
+        display: block;
         display: flex;
         align-items: center;
         justify-content: center;
-        column-gap: 20px;
-
-        .MenuButtonIcon {
-            display: none;
-            margin-right: -15px;
-
-            .MenuIcon {
-                color: #fff;
-                font-size: 30px;
-            }
-
-            @media (max-width: 480px) {
-                display: block;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .Menu {
-                .MenuItem {
-                    .Link {
-                        color: #000;
-                    }
-                }
-            }
-        }
-
-        .Button2 {
-            border-radius: $btn_radius;
-            background-color: $btn_color1;
-
-            .Link {
-                color: $btn_color2;
-                text-transform: none;
-                font-weight: 900;
-            }
-
-            @media (max-width: 480px) {
-                display: none;
-            }
-        }
-
-        @media (max-width: 769px) {
-            column-gap: 10px;
-        }
-    }
-
-    @media (max-width: 769px) {
-        padding: 16px;
+      }
     }
 
     @media (max-width: 480px) {
-        padding: 10px 16px;
+      .Menu {
+        .MenuItem {
+          .Link {
+            color: #000;
+          }
+        }
+      }
     }
+
+    .Button2 {
+      border-radius: $btn_radius;
+      background-color: $btn_color1;
+
+      .Link {
+        color: $btn_color2;
+        text-transform: none;
+        font-weight: 900;
+      }
+
+      @media (max-width: 480px) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 769px) {
+      column-gap: 10px;
+    }
+  }
+
+  @media (max-width: 769px) {
+    padding: 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px 16px;
+  }
 }

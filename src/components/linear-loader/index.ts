@@ -1,1 +1,1 @@
-export { LinearLoader } from "./linear-progress-loader";
+export { LinearLoader } from './linear-progress-loader';

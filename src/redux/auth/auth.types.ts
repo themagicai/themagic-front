@@ -1,15 +1,14 @@
 export type RegisterTypes = {
-    password: string;
-    name: string;
-    phoneNumber: string;
-    roleName: string;
+  name: string;
+  email: string;
+  password: string;
 };
 
 export type LoginTypes = {
-    username: string;
-    password: string;
+  email: string;
+  password: string;
 };
 
 export type LogoutTypes = {
-    refresh: string
-}
+  refresh: string;
+};

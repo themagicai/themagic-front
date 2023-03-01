@@ -1,8 +1,8 @@
-export { Banner } from "./banner";
-export { Cards } from "./cards";
-export { Footer } from "./footer";
-export { Header } from "./header";
+export { Banner } from './banner';
+export { Cards } from './cards';
+export { Footer } from './footer';
+export { Header } from './header';
 export { Layout } from './layout';
-export { Login } from "./login";
-export { Register } from "./register";
-export { VideoConcept } from "./video-concept";
+export { Login } from './login';
+export { Register } from './register';
+export { VideoConcept } from './video-concept';

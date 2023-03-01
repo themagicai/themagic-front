@@ -1,1 +1,1 @@
-export { CVPage } from "./cv";
+export { CVPage } from './cv';

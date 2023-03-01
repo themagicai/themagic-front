@@ -1,30 +1,28 @@
-import { api } from "../index.api";
+import { api } from '../index.api';
+import { RegisterTypes, LoginTypes, LogoutTypes } from './auth.types';
 
 export const authApi = api.injectEndpoints({
-    endpoints: (builder) => ({
-        registerUsers: builder.mutation({
-            query: (body) => ({
-                url: "api/register",
-                method: "POST",
-                body,
-            }),
-            invalidatesTags: [],
-        }),
-        loginUsers: builder.mutation({
-            query: (body) => ({
-                url: "api/login",
-                method: "POST",
-                body,
-            }),
-            invalidatesTags: [],
-        }),
-        logoutUsers: builder.mutation({
-            query: (body) => ({
-                url: "api/logout",
-                method: "POST",
-                body,
-            }),
-            invalidatesTags: [],
-        }),
+  endpoints: (builder) => ({
+    registerUsers: builder.mutation<RegisterTypes[], string>({
+      query: (body) => ({
+        url: 'api/register',
+        method: 'POST',
+        body,
+      }),
     }),
+    loginUsers: builder.mutation<string, LoginTypes>({
+      query: (body) => ({
+        url: 'api/login',
+        method: 'POST',
+        body,
+      }),
+    }),
+    logoutUsers: builder.mutation<string, LogoutTypes>({
+      query: (body) => ({
+        url: 'api/logout',
+        method: 'POST',
+        body,
+      }),
+    }),
+  }),
 });
