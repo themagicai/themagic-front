@@ -9,6 +9,7 @@ export const authApi = api.injectEndpoints({
         method: 'POST',
         body,
       }),
+      invalidatesTags: ['register'],
     }),
     loginUsers: builder.mutation<string, LoginTypes>({
       query: (body) => ({
@@ -16,6 +17,7 @@ export const authApi = api.injectEndpoints({
         method: 'POST',
         body,
       }),
+      invalidatesTags: ['register'],
     }),
     logoutUsers: builder.mutation<string, LogoutTypes>({
       query: (body) => ({
@@ -23,6 +25,7 @@ export const authApi = api.injectEndpoints({
         method: 'POST',
         body,
       }),
+      invalidatesTags: ['register'],
     }),
   }),
 });
