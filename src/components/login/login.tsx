@@ -15,7 +15,7 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import Cookies from 'js-cookie';
-import { useRegisterUsersMutation } from '../../redux/index.endpoints';
+import { useLoginUsersMutation } from '../../redux/index.endpoints';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -44,7 +44,7 @@ export const Login = () => {
   const [
     registerUsers,
     { data: registerRTK, isLoading, isSuccess, isError, error },
-  ] = useRegisterUsersMutation();
+  ] = useLoginUsersMutation();
 
   const handleOpen = () => setOpen(true);
 
@@ -55,6 +55,10 @@ export const Login = () => {
   const handleMouseDownPassword = (
     event: React.MouseEvent<HTMLButtonElement>
   ) => event.preventDefault();
+
+  const SubmitFormHandler = (value: any) => {
+    registerUsers(value);
+  };
 
   if (isError) return <Alert severity="error">isError RTK Error!</Alert>;
 
@@ -68,32 +72,37 @@ export const Login = () => {
         </Link>
       </Button>
       <Modal
-        className="Modal"
         open={open}
         onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
       >
-        <Box sx={style} className="Box">
+        <Box sx={style} component="form" noValidate onSubmit={handleSubmit(SubmitFormHandler)}>
           <Typography
-            className="Typography"
-            id="modal-modal-title"
             variant="h5"
             component="h1"
           >
             Login
           </Typography>
           <OutlinedInput
-            className="TextField"
-            type="Email"
             color="secondary"
             placeholder="Email"
+            type="email"
+            autoComplete="email"
+            {...register('email', {
+              pattern:
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+              required: true,
+            })}
           />
           <OutlinedInput
-            className="TextField"
-            type={showPassword ? 'text' : 'password'}
             color="secondary"
             placeholder="Create password"
+            type={showPassword ? 'text' : 'password'}
+            autoComplete="confirmPassword"
+            {...register('password1', {
+              required: true,
+              minLength: 3,
+              maxLength: 20,
+            })}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
@@ -106,17 +115,16 @@ export const Login = () => {
               </InputAdornment>
             }
           />
-          <Box className="Buttons">
+          <Box>
             <Button
-              className="Button1"
               variant="contained"
               onClick={handleClose}
             >
               Cancel
             </Button>
-            <Button className="Button2" variant="contained">
+            <Button variant="contained" type="submit">
               {/* <Link to="" className='login-button'> */}
-                Ok
+              Ok
               {/* </Link> */}
             </Button>
           </Box>

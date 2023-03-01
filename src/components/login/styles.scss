@@ -19,32 +19,4 @@ $btn_color2: #000;
       display: none;
     }
   }
-
-  .Modal {
-    .Box {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      row-gap: 20px;
-
-      .Typography {
-      }
-
-      .TextField {
-      }
-
-      .Buttons {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        column-gap: 20px;
-
-        .Button1 {
-        }
-
-        .Button2 {
-        }
-      }
-    }
-  }
 }

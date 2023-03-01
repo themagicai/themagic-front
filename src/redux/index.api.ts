@@ -16,7 +16,7 @@ export const api = createApi({
     },
   }),
   refetchOnFocus: true,
-  tagTypes: ['register', 'cv'],
+  tagTypes: ['auth', 'cv'],
   endpoints: (builder) => ({
     getUsers: builder.query<UserTypes[], string>({
       query: () => `api`,

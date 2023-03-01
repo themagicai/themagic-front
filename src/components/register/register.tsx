@@ -55,7 +55,7 @@ export const Register = () => {
       <Box
         className="Box"
         component="form"
-        noValidate
+        // noValidate
         autoComplete="off"
         // onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}
         onSubmit={handleSubmit(SubmitFormHandler)}
@@ -72,8 +72,8 @@ export const Register = () => {
           {...register('name', {
             pattern: /^[A-Za-z]+$/i,
             required: true,
-            // minLength: 3,
-            // maxLength: 25,
+            minLength: 3,
+            maxLength: 25,
           })}
         />
         <OutlinedInput
@@ -86,8 +86,6 @@ export const Register = () => {
             pattern:
               /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
             required: true,
-            // minLength: 3,
-            // maxLength: 25,
           })}
         />
         <OutlinedInput
@@ -98,8 +96,8 @@ export const Register = () => {
           autoComplete="confirmPassword"
           {...register('password1', {
             required: true,
-            // minLength: 3,
-            // maxLength: 20,
+            minLength: 3,
+            maxLength: 20,
           })}
           endAdornment={
             <InputAdornment position="end">
