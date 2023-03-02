@@ -120,12 +120,10 @@ export const Login = () => {
                     />
                     <Box>
                         <Button variant="contained" onClick={handleClose}>
-                            Cancel
+                            cancel
                         </Button>
                         <Button variant="contained" type="submit">
-                            {/* <Link to=""> */}
-                            Ok
-                            {/* </Link> */}
+                            <Link to="cv">ok</Link>
                         </Button>
                     </Box>
                 </Box>

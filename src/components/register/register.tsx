@@ -92,7 +92,7 @@ export const Register = () => {
                     className={styles.TextField}
                     type={showPassword1 ? 'text' : 'password'}
                     autoComplete="confirmPassword"
-                    {...register('password1', {
+                    {...register('password', {
                         required: true,
                         minLength: 3,
                         maxLength: 20,
@@ -119,11 +119,11 @@ export const Register = () => {
                     className={styles.TextField}
                     type={showPassword2 ? 'text' : 'password'}
                     autoComplete="ConfirmPassword"
-                    // {...register("password2", {
-                    //     required: true,
-                    //     // minLength: 3,
-                    //     // maxLength: 20,
-                    // })}
+                    {...register("password", {
+                        required: true,
+                        minLength: 3,
+                        maxLength: 20,
+                    })}
                     endAdornment={
                         <InputAdornment position="end">
                             <IconButton
@@ -146,9 +146,9 @@ export const Register = () => {
                     color="primary"
                     className={styles.Button}
                 >
-                    {/* <Link to="" className="Link"> */}
-                    Try now
-                    {/* </Link> */}
+                    <Link to="cv" className={styles.Link}>
+                        Try now
+                    </Link>
                 </Button>
             </Box>
         </Box>
