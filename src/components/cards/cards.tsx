@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles.scss';
 import {
     Box,
     Typography,
@@ -7,14 +6,15 @@ import {
     CardActionArea,
     CardContent,
 } from '@mui/material';
+import styles from './styles.module.scss';
 
-interface cardInfoTypes {
+interface cardDataTypes {
     id: number;
     title: string;
     desc: string;
 }
 
-const cardInfo: Array<cardInfoTypes> = [
+const cardData: Array<cardDataTypes> = [
     {
         id: 1,
         title: 'Selling CV',
@@ -39,28 +39,34 @@ const cardInfo: Array<cardInfoTypes> = [
 
 export const Cards = () => {
     return (
-        <Box className="cards">
-            <Box className="titles">
-                <Typography variant="h4" className="Typography1">
+        <Box className={styles.cards}>
+            <Box className={styles.titles}>
+                <Typography variant="h4" className={styles.Typography1}>
                     Generate any type of content
                 </Typography>
-                <Typography variant="h4" className="Typography2">
+                <Typography variant="h4" className={styles.Typography2}>
                     10 times faster
                 </Typography>
             </Box>
-            <Card className="cards-container">
-                {cardInfo.map((e: any) => (
-                    <CardActionArea key={e.id} className="CardActionArea">
-                        <CardContent className="CardContent">
+            <Card className={styles.cardsContainer}>
+                {cardData.map((e: any) => (
+                    <CardActionArea
+                        key={e.id}
+                        className={styles.CardActionArea}
+                    >
+                        <CardContent className={styles.CardContent}>
                             <Typography
                                 color="white"
                                 variant="h5"
-                                className="Typography3"
+                                className={styles.Typography3}
                             >
                                 {e.title}
                             </Typography>
                             <br />
-                            <Typography color="#999" className="Typography4">
+                            <Typography
+                                color="#999"
+                                className={styles.Typography4}
+                            >
                                 {e.desc}
                             </Typography>
                         </CardContent>

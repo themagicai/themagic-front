@@ -1,13 +1,13 @@
 import React from 'react';
-import './styles.scss';
 import { Box, Button } from '@mui/material';
 import shape from '../../assets/images/Shape.png';
+import styles from './styles.module.scss';
 
 export const Banner = () => {
     return (
-        <Box className="banner">
-            <Box className="con-left">
-                <Box className="con-text">
+        <Box className={styles.banner}>
+            <Box className={styles.containerLeft}>
+                <Box className={styles.containerText}>
                     <h1>The magic AI</h1>
                     <br />
                     <p>
@@ -16,7 +16,7 @@ export const Banner = () => {
                         your careativity with the power of magic.
                     </p>
                 </Box>
-                <Button className="Button" variant="contained">
+                <Button className={styles.Button} variant="contained">
                     Try now
                 </Button>
             </Box>

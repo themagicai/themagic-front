@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './styles.scss';
 import { Box, Button, Typography, Modal } from '@mui/material';
 import { Link } from 'react-router-dom';
+import styles from './styles.module.scss';
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -24,7 +24,7 @@ export const Logout = () => {
     const handleClose = () => setOpen(false);
 
     return (
-        <Box className="logout">
+        <Box>
             <Button onClick={handleOpen}>Open modal</Button>
             <Modal
                 open={open}

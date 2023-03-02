@@ -6,13 +6,13 @@
     justify-content: space-around;
     padding: 80px 25px;
 
-    .con-left {
+    .containerLeft {
         display: flex;
         justify-content: center;
         flex-direction: column;
         row-gap: 90px;
 
-        .con-text {
+        .containerText {
             h1 {
                 font-size: 72px;
                 font-family: 'Montserrat', sans-serif;

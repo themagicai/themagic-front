@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './styles.scss';
 import {
     Box,
     Button,
@@ -16,8 +15,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import Cookies from 'js-cookie';
 import { useLoginUsersMutation } from '../../redux/index.endpoints';
+import styles from './styles.module.scss';
 
-const style = {
+const modalFormStyle = {
     position: 'absolute' as 'absolute',
     top: '50%',
     left: '50%',
@@ -65,15 +65,15 @@ export const Login = () => {
     if (isLoading) return <CircularProgress disableShrink />;
 
     return (
-        <Box className="login">
-            <Button className="Button" onClick={handleOpen}>
-                <Link to="" className="Link">
+        <Box className={styles.login}>
+            <Button className={styles.Button} onClick={handleOpen}>
+                <Link to="" className={styles.Link}>
                     Log in
                 </Link>
             </Button>
             <Modal open={open} onClose={handleClose}>
                 <Box
-                    sx={style}
+                    sx={modalFormStyle}
                     component="form"
                     noValidate
                     onSubmit={handleSubmit(SubmitFormHandler)}
@@ -123,7 +123,7 @@ export const Login = () => {
                             Cancel
                         </Button>
                         <Button variant="contained" type="submit">
-                            {/* <Link to="" className='login-button'> */}
+                            {/* <Link to=""> */}
                             Ok
                             {/* </Link> */}
                         </Button>

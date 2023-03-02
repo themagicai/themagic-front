@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import './styles.scss';
 import { Box, Button, Menu, MenuItem, Fade } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import { Login } from '../login';
+import styles from './styles.module.scss';
 
 export const Header = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -21,23 +21,23 @@ export const Header = () => {
     };
 
     return (
-        <header className="header">
-            <Box className="nav-left">
+        <header className={styles.header}>
+            <Box className={styles.navLeft}>
                 <h1>THE MAGIC AI</h1>
             </Box>
-            <Box className="nav-right">
+            <Box className={styles.navRight}>
                 <Button
-                    className="MenuButtonIcon"
+                    className={styles.MenuButtonIcon}
                     id="fade-button"
                     aria-controls={open ? 'fade-menu' : undefined}
                     aria-haspopup="true"
                     aria-expanded={open ? 'true' : undefined}
                     onClick={handleClick}
                 >
-                    <MenuIcon className="MenuIcon" />
+                    <MenuIcon className={styles.MenuIcon} />
                 </Button>
                 <Menu
-                    className="Menu"
+                    className={styles.Menu}
                     id="fade-menu"
                     MenuListProps={{ 'aria-labelledby': 'fade-button' }}
                     anchorEl={anchorEl}
@@ -45,18 +45,18 @@ export const Header = () => {
                     onClose={handleClose}
                     TransitionComponent={Fade}
                 >
-                    <MenuItem className="MenuItem" onClick={handleClose}>
-                        <Link to="login" className="Link">
+                    <MenuItem className={styles.MenuItem} onClick={handleClose}>
+                        <Link to="login" className={styles.Link}>
                             Log in
                         </Link>
                     </MenuItem>
                     <MenuItem
-                        className="MenuItem"
+                        className={styles.MenuItem}
                         // onClick={handleClose}
                     >
                         <Link
                             to="register#register"
-                            className="Link"
+                            className={styles.Link}
                             onClick={toRegister}
                         >
                             Sign Up
@@ -65,11 +65,11 @@ export const Header = () => {
                 </Menu>
                 <Login />
                 <Button
-                    className="Button2"
+                    className={styles.Button2}
                     variant="contained"
                     onClick={toRegister}
                 >
-                    <Link to="register#register" className="Link">
+                    <Link to="register#register" className={styles.Link}>
                         Sign Up
                     </Link>
                 </Button>

@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles.scss';
 import {
     Header,
     Banner,
@@ -9,12 +8,13 @@ import {
     Footer,
 } from '../../components';
 import { Box } from '@mui/material';
+import styles from './styles.module.scss';
 
 export const HomePage = () => {
     return (
-        <Box className="home">
+        <Box className={styles.home}>
             <Header />
-            <Box className="background-image">
+            <Box className={styles.backgroundImage}>
                 <Banner />
                 <VideoConcept />
                 <Cards />

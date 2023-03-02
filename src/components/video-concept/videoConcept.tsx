@@ -1,13 +1,13 @@
 import React from 'react';
-import './styles.scss';
 import { Box } from '@mui/system';
 import Arrows from '../../assets/images/arrow.png';
+import styles from './styles.module.scss';
 
 export const VideoConcept = () => {
     return (
-        <Box className="video">
-            <Box className="Box">
-                <Box className="title">
+        <Box className={styles.video}>
+            <Box className={styles.Box}>
+                <Box className={styles.title}>
                     <h1>How to use</h1>
                     <img src={Arrows} alt="arrow" />
                 </Box>

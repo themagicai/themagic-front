@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './styles.scss';
 import {
     Button,
     Box,
@@ -15,6 +14,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { useRegisterUsersMutation } from '../../redux/index.endpoints';
 import { useForm } from 'react-hook-form';
+import styles from './styles.module.scss';
 
 export const Register = () => {
     const [showPassword1, setShowPassword1] = useState<boolean>(false);
@@ -49,22 +49,22 @@ export const Register = () => {
     if (isLoading) return <CircularProgress disableShrink />;
 
     return (
-        <Box className="register" id="#register">
+        <Box className={styles.register} id="#register">
             <Box
-                className="Box"
+                className={styles.Box}
                 component="form"
                 // noValidate
                 autoComplete="off"
                 // onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}
                 onSubmit={handleSubmit(SubmitFormHandler)}
             >
-                <Typography variant="h4" className="Typography1">
+                <Typography variant="h4" className={styles.Typography}>
                     Try now for <span>FREE!</span>
                 </Typography>
                 <OutlinedInput
                     color="secondary"
                     placeholder="Name"
-                    className="TextField"
+                    className={styles.TextField}
                     type="text"
                     autoComplete="name"
                     {...register('name', {
@@ -77,7 +77,7 @@ export const Register = () => {
                 <OutlinedInput
                     color="secondary"
                     placeholder="Email"
-                    className="TextField"
+                    className={styles.TextField}
                     type="email"
                     autoComplete="email"
                     {...register('email', {
@@ -89,7 +89,7 @@ export const Register = () => {
                 <OutlinedInput
                     color="secondary"
                     placeholder="Create password"
-                    className="TextField"
+                    className={styles.TextField}
                     type={showPassword1 ? 'text' : 'password'}
                     autoComplete="confirmPassword"
                     {...register('password1', {
@@ -116,7 +116,7 @@ export const Register = () => {
                 <OutlinedInput
                     color="secondary"
                     placeholder="confirm password"
-                    className="TextField"
+                    className={styles.TextField}
                     type={showPassword2 ? 'text' : 'password'}
                     autoComplete="ConfirmPassword"
                     // {...register("password2", {
@@ -144,7 +144,7 @@ export const Register = () => {
                     type="submit"
                     variant="contained"
                     color="primary"
-                    className="Button"
+                    className={styles.Button}
                 >
                     {/* <Link to="" className="Link"> */}
                     Try now
