@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import Cookies from 'js-cookie';
-import { RegisterTypes } from './auth/auth.types';
+import { UserTypes } from './index.types';
 
 export const api = createApi({
     reducerPath: 'api',
@@ -17,8 +17,8 @@ export const api = createApi({
     refetchOnFocus: true,
     tagTypes: ['auth', 'cv'],
     endpoints: (builder) => ({
-        getUsers: builder.query<RegisterTypes[], any>({
-            query: () => `register`,
+        getUsers: builder.query<UserTypes[], any>({
+            query: () => `users`,
         }),
     }),
 });
