@@ -4,81 +4,81 @@ $btn_color1: #fff;
 $btn_color2: #000;
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 90px;
-  border-bottom: 1px solid #fff;
-  background-color: $btn_color2;
-
-  .nav-left {
-    h1 {
-      font-family: 'Montserrat', sans-serif;
-
-      @media (max-width: 480px) {
-        font-size: 25px;
-      }
-    }
-  }
-
-  .nav-right {
     display: flex;
     align-items: center;
-    justify-content: center;
-    column-gap: 20px;
+    justify-content: space-between;
+    padding: 16px 90px;
+    border-bottom: 1px solid #fff;
+    background-color: $btn_color2;
 
-    .MenuButtonIcon {
-      display: none;
-      margin-right: -15px;
+    .nav-left {
+        h1 {
+            font-family: 'Montserrat', sans-serif;
 
-      .MenuIcon {
-        color: #fff;
-        font-size: 30px;
-      }
+            @media (max-width: 480px) {
+                font-size: 25px;
+            }
+        }
+    }
 
-      @media (max-width: 480px) {
-        display: block;
+    .nav-right {
         display: flex;
         align-items: center;
         justify-content: center;
-      }
-    }
+        column-gap: 20px;
 
-    @media (max-width: 480px) {
-      .Menu {
-        .MenuItem {
-          .Link {
-            color: #000;
-          }
+        .MenuButtonIcon {
+            display: none;
+            margin-right: -15px;
+
+            .MenuIcon {
+                color: #fff;
+                font-size: 30px;
+            }
+
+            @media (max-width: 480px) {
+                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
         }
-      }
-    }
 
-    .Button2 {
-      border-radius: $btn_radius;
-      background-color: $btn_color1;
+        @media (max-width: 480px) {
+            .Menu {
+                .MenuItem {
+                    .Link {
+                        color: #000;
+                    }
+                }
+            }
+        }
 
-      .Link {
-        color: $btn_color2;
-        text-transform: none;
-        font-weight: 900;
-      }
+        .Button2 {
+            border-radius: $btn_radius;
+            background-color: $btn_color1;
 
-      @media (max-width: 480px) {
-        display: none;
-      }
+            .Link {
+                color: $btn_color2;
+                text-transform: none;
+                font-weight: 900;
+            }
+
+            @media (max-width: 480px) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 769px) {
+            column-gap: 10px;
+        }
     }
 
     @media (max-width: 769px) {
-      column-gap: 10px;
+        padding: 16px;
     }
-  }
 
-  @media (max-width: 769px) {
-    padding: 16px;
-  }
-
-  @media (max-width: 480px) {
-    padding: 10px 16px;
-  }
+    @media (max-width: 480px) {
+        padding: 10px 16px;
+    }
 }

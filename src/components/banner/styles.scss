@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 .banner {
     display: flex;
@@ -15,7 +15,7 @@
         .con-text {
             h1 {
                 font-size: 72px;
-                font-family: "Montserrat", sans-serif;
+                font-family: 'Montserrat', sans-serif;
 
                 @media (max-width: 1024px) {
                     font-size: 50px;
@@ -34,7 +34,7 @@
                 }
             }
             p {
-                font-family: "Montserrat", sans-serif;
+                font-family: 'Montserrat', sans-serif;
                 line-height: 22px;
             }
         }

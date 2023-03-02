@@ -1,9 +1,9 @@
 export interface ObjType {
-  name: string;
-  surname: string;
+    name: string;
+    surname: string;
 }
 
 const obj = {
-  name: 'Ramil',
-  surname: 'Kamalov',
+    name: 'Ramil',
+    surname: 'Kamalov',
 };
