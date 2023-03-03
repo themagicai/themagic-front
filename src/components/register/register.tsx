@@ -19,23 +19,31 @@ import styles from './styles.module.scss';
 export const Register = () => {
     const [showPassword1, setShowPassword1] = useState<boolean>(false);
     const [showPassword2, setShowPassword2] = useState<boolean>(false);
+
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
+
     const [data, setData] = useState<string>('');
+
     const navigate = useNavigate();
+
     const token = Cookies.get('token');
+
     const [
         registerUsers,
         { data: authRegister, isLoading, isSuccess, isError },
     ] = useRegisterUsersMutation();
+
     const handleClickShowPassword1 = () => setShowPassword1((show) => !show);
     const handleClickShowPassword2 = () => setShowPassword2((show) => !show);
+
     const handleMouseDownPassword = (
         event: React.MouseEvent<HTMLButtonElement>
     ) => event.preventDefault();
+    
     const SubmitFormHandler = (value: any) => {
         registerUsers(value);
     };

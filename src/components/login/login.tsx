@@ -33,29 +33,39 @@ const modalFormStyle = {
 export const Login = () => {
     const [open, setOpen] = useState<boolean>(false);
     const [showPassword, setShowPassword] = useState<boolean>(false);
+
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
+
     const [data, setData] = useState<string>('');
+
     const navigate = useNavigate();
+
     const token = Cookies.get('token');
-    const [loginUsers, { data: login, isLoading, isSuccess, isError }] =
+
+    const [loginUsers, { data: authLogin, isLoading, isSuccess, isError }] =
         useLoginUsersMutation();
+
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
     const handleClickShowPassword = () => setShowPassword((show) => !show);
+
     const handleMouseDownPassword = (
         event: React.MouseEvent<HTMLButtonElement>
     ) => event.preventDefault();
+    
     const SubmitFormHandler = (value: any) => {
         loginUsers(value);
+        navigate('cv');
     };
 
     useEffect(() => {
-        if (login) {
-            Cookies.set('token', login.data.token, {
+        if (authLogin) {
+            Cookies.set('token', authLogin.data.token, {
                 expires: 7,
             });
         }
@@ -124,7 +134,9 @@ export const Login = () => {
                             cancel
                         </Button>
                         <Button variant="contained" type="submit">
-                            <Link to="cv">ok</Link>
+                            {/* <Link to="cv"> */}
+                                ok
+                            {/* </Link> */}
                         </Button>
                     </Box>
                 </Box>
