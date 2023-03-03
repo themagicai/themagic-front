@@ -29,17 +29,13 @@ export const Register = () => {
     const token = Cookies.get('token');
     const [
         registerUsers,
-        { data: registerRTK, isLoading, isSuccess, isError },
+        { data: authRegister, isLoading, isSuccess, isError },
     ] = useRegisterUsersMutation();
-
     const handleClickShowPassword1 = () => setShowPassword1((show) => !show);
-
     const handleClickShowPassword2 = () => setShowPassword2((show) => !show);
-
     const handleMouseDownPassword = (
         event: React.MouseEvent<HTMLButtonElement>
     ) => event.preventDefault();
-
     const SubmitFormHandler = (value: any) => {
         registerUsers(value);
     };

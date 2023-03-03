@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     Box,
     Button,
@@ -13,8 +13,8 @@ import {
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import Cookies from 'js-cookie';
 import { useLoginUsersMutation } from '../../redux/index.endpoints';
+import Cookies from 'js-cookie';
 import styles from './styles.module.scss';
 
 const modalFormStyle = {
@@ -41,24 +41,25 @@ export const Login = () => {
     const [data, setData] = useState<string>('');
     const navigate = useNavigate();
     const token = Cookies.get('token');
-    const [
-        registerUsers,
-        { data: registerRTK, isLoading, isSuccess, isError, error },
-    ] = useLoginUsersMutation();
-
+    const [loginUsers, { data: login, isLoading, isSuccess, isError }] =
+        useLoginUsersMutation();
     const handleOpen = () => setOpen(true);
-
     const handleClose = () => setOpen(false);
-
     const handleClickShowPassword = () => setShowPassword((show) => !show);
-
     const handleMouseDownPassword = (
         event: React.MouseEvent<HTMLButtonElement>
     ) => event.preventDefault();
-
     const SubmitFormHandler = (value: any) => {
-        registerUsers(value);
+        loginUsers(value);
     };
+
+    useEffect(() => {
+        if (login) {
+            Cookies.set('token', login.data.token, {
+                expires: 7,
+            });
+        }
+    }, [isSuccess]);
 
     if (isError) return <Alert severity="error">isError RTK Error!</Alert>;
 
