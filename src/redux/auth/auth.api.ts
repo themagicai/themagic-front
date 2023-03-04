@@ -1,10 +1,10 @@
 import { api } from '../index.api';
 import { RegisterTypes, LoginTypes, LogoutTypes } from './auth.types';
-import { transformResponse, transformErrorResponse } from '../../utils/response';
+import { transformResponse, transformErrorResponse } from '../../utils/transformResponse';
 
 export const authApi = api.injectEndpoints({
     endpoints: (builder) => ({
-        registerUsers: builder.mutation<RegisterTypes[], string>({
+        registerUsers: builder.mutation<RegisterTypes, any>({
             query: (body) => ({
                 url: 'api/register',
                 method: 'POST',
@@ -14,7 +14,7 @@ export const authApi = api.injectEndpoints({
             transformResponse,
             transformErrorResponse,
         }),
-        loginUsers: builder.mutation<string, LoginTypes>({
+        loginUsers: builder.mutation<LoginTypes, any>({
             query: (body) => ({
                 url: 'api/login',
                 method: 'POST',
@@ -24,10 +24,9 @@ export const authApi = api.injectEndpoints({
             transformResponse,
             transformErrorResponse
         }),
-        logoutUsers: builder.mutation<string, LogoutTypes>({
+        logoutUsers: builder.mutation<LogoutTypes, any>({
             query: (body) => ({
                 url: 'api/logout',
-                method: 'POST',
                 body,
             }),
             invalidatesTags: ['auth'],

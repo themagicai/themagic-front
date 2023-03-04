@@ -8,10 +8,10 @@ export type MessageTypes = {
     data: string;
 };
 
-export interface ServerResponseTypes<T> {
+export interface ServerResponse<T> {
     data: T[];
 }
 
-export interface ServerResponseObjectTypes<T> {
+export interface ServerResponseObject<T> {
     data: T;
 }

@@ -5,8 +5,10 @@ export type RegisterTypes = {
 };
 
 export type LoginTypes = {
-    email: string;
-    password: string;
+    data: {
+        email: string;
+        password: string;
+    }
 };
 
 export type LogoutTypes = {

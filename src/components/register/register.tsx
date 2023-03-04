@@ -30,23 +30,25 @@ export const Register = () => {
     ] = useRegisterUsersMutation();
     const navigate = useNavigate();
     const token = Cookies.get('token');
-    
+
     const handleClickShowPassword1 = () => setShowPassword1((show) => !show);
-    
+
     const handleClickShowPassword2 = () => setShowPassword2((show) => !show);
 
     const handleMouseDownPassword = (
         event: React.MouseEvent<HTMLButtonElement>
     ) => event.preventDefault();
 
-    const SubmitFormHandler = (value: any) => {
-        registerUsers(value);
-        // navigate('/cv');
+    const SubmitFormHandler = (values: any) => {
+        registerUsers(values);
+        if(isSuccess) {
+            navigate('/cv');
+        }
     };
 
-    // if (isError) return <Alert severity="error">isError RTK Error!</Alert>;
+    if (isError) return <Alert severity="error"> isError RTK Error! </Alert>;
 
-    // if (isLoading) return <CircularProgress disableShrink />;
+    if (isLoading) return <CircularProgress disableShrink />;
 
     return (
         <Box className={styles.register} id="#register">

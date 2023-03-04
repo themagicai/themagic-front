@@ -53,14 +53,17 @@ export const Login = () => {
         event: React.MouseEvent<HTMLButtonElement>
     ) => event.preventDefault();
 
-    const SubmitFormHandler = (value: any) => {
-        loginUsers(value);
-        navigate('cv');
+    const SubmitFormHandler = (values: any) => {
+        loginUsers(values);
+    };
+
+    if (isSuccess) {
+        navigate('cv')
     };
 
     useEffect(() => {
         if (authLogin) {
-            Cookies.set('token', authLogin.data.token, {
+            Cookies.set('token', authLogin.data.email, {
                 expires: 7,
             });
         }
@@ -89,7 +92,7 @@ export const Login = () => {
                         color="secondary"
                         placeholder="Email"
                         type="email"
-                        autoComplete="email"
+                        autoComplete=""
                         {...register('email', {
                             pattern:
                                 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -100,7 +103,7 @@ export const Login = () => {
                         color="secondary"
                         placeholder="Create password"
                         type={showPassword ? 'text' : 'password'}
-                        autoComplete="confirmPassword"
+                        autoComplete=""
                         {...register('password1', {
                             required: true,
                             minLength: 3,
