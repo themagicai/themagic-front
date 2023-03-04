@@ -31,8 +31,6 @@ const modalFormStyle = {
 };
 
 export const Login = () => {
-    const navigate = useNavigate();
-    const token = Cookies.get('token');
     const [open, setOpen] = useState<boolean>(false);
     const [showPassword, setShowPassword] = useState<boolean>(false);
     const {
@@ -42,8 +40,11 @@ export const Login = () => {
     } = useForm();
     const [loginUsers, { data: authLogin, isLoading, isSuccess, isError }] =
         useLoginUsersMutation();
+    const navigate = useNavigate();
+    const token = Cookies.get('token');
 
     const handleOpen = () => setOpen(true);
+
     const handleClose = () => setOpen(false);
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);

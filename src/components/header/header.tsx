@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Button, Menu, MenuItem, Fade } from '@mui/material';
+import { Box, Button, Menu, MenuItem, Fade, Typography } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { Link, useNavigate } from 'react-router-dom';
 import { Login } from '../login';
@@ -19,13 +19,15 @@ export const Header = () => {
     const toRegister = () => {
         const target: any = document.getElementById('#register');
         target.scrollIntoView({ behavior: 'smooth' });
-        navigate('register#register')
+        navigate('register#register');
     };
 
     return (
         <header className={styles.header}>
             <Box className={styles.navLeft}>
-                <h1>THE MAGIC AI</h1>
+                <Typography className={styles.Typography} variant='h4'>
+                    THE MAGIC AI
+                </Typography>
             </Box>
             <Box className={styles.navRight}>
                 <Button
@@ -47,10 +49,7 @@ export const Header = () => {
                     onClose={handleClose}
                     TransitionComponent={Fade}
                 >
-                    <MenuItem 
-                        className={styles.MenuItem} 
-                        onClick={handleClose}
-                    >
+                    <MenuItem className={styles.MenuItem} onClick={handleClose}>
                         Log in
                     </MenuItem>
                     <MenuItem

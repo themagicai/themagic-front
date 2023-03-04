@@ -12,8 +12,10 @@ $btn_color2: #000;
     background-color: $btn_color2;
 
     .navLeft {
-        h1 {
+        .Typography {
             font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 600;
 
             @media (max-width: 480px) {
                 font-size: 25px;

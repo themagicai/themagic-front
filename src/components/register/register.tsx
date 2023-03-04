@@ -17,8 +17,6 @@ import { useForm } from 'react-hook-form';
 import styles from './styles.module.scss';
 
 export const Register = () => {
-    const navigate = useNavigate();
-    const token = Cookies.get('token');
     const [showPassword1, setShowPassword1] = useState<boolean>(false);
     const [showPassword2, setShowPassword2] = useState<boolean>(false);
     const {
@@ -30,8 +28,11 @@ export const Register = () => {
         registerUsers,
         { data: authRegister, isLoading, isSuccess, isError },
     ] = useRegisterUsersMutation();
-
+    const navigate = useNavigate();
+    const token = Cookies.get('token');
+    
     const handleClickShowPassword1 = () => setShowPassword1((show) => !show);
+    
     const handleClickShowPassword2 = () => setShowPassword2((show) => !show);
 
     const handleMouseDownPassword = (
@@ -40,6 +41,7 @@ export const Register = () => {
 
     const SubmitFormHandler = (value: any) => {
         registerUsers(value);
+        // navigate('/cv');
     };
 
     // if (isError) return <Alert severity="error">isError RTK Error!</Alert>;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import shape from '../../assets/images/Shape.png';
 import styles from './styles.module.scss';
 
@@ -8,13 +8,17 @@ export const Banner = () => {
         <Box className={styles.banner}>
             <Box className={styles.containerLeft}>
                 <Box className={styles.containerText}>
-                    <h1>The magic AI</h1>
-                    <br />
-                    <p>
+                    <Typography
+                        className={styles.Typography}
+                        variant="h1"
+                    >
+                        The magic AI
+                    </Typography>
+                    <Typography>
                         Get the job you want using AI. <br />
                         write faster, think bigger and improve <br />
                         your careativity with the power of magic.
-                    </p>
+                    </Typography>
                 </Box>
                 <Button className={styles.Button} variant="contained">
                     Try now
