@@ -31,21 +31,15 @@ const modalFormStyle = {
 };
 
 export const Login = () => {
+    const navigate = useNavigate();
+    const token = Cookies.get('token');
     const [open, setOpen] = useState<boolean>(false);
     const [showPassword, setShowPassword] = useState<boolean>(false);
-
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
-
-    const [data, setData] = useState<string>('');
-
-    const navigate = useNavigate();
-
-    const token = Cookies.get('token');
-
     const [loginUsers, { data: authLogin, isLoading, isSuccess, isError }] =
         useLoginUsersMutation();
 
@@ -57,7 +51,7 @@ export const Login = () => {
     const handleMouseDownPassword = (
         event: React.MouseEvent<HTMLButtonElement>
     ) => event.preventDefault();
-    
+
     const SubmitFormHandler = (value: any) => {
         loginUsers(value);
         navigate('cv');
@@ -78,9 +72,7 @@ export const Login = () => {
     return (
         <Box className={styles.login}>
             <Button className={styles.Button} onClick={handleOpen}>
-                <Link to="" className={styles.Link}>
-                    Log in
-                </Link>
+                Log in
             </Button>
             <Modal open={open} onClose={handleClose}>
                 <Box
@@ -134,9 +126,7 @@ export const Login = () => {
                             cancel
                         </Button>
                         <Button variant="contained" type="submit">
-                            {/* <Link to="cv"> */}
-                                ok
-                            {/* </Link> */}
+                            ok
                         </Button>
                     </Box>
                 </Box>

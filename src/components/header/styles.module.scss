@@ -47,9 +47,7 @@ $btn_color2: #000;
         @media (max-width: 480px) {
             .Menu {
                 .MenuItem {
-                    .Link {
-                        color: #000;
-                    }
+                    color: #000;
                 }
             }
         }
@@ -57,12 +55,9 @@ $btn_color2: #000;
         .Button2 {
             border-radius: $btn_radius;
             background-color: $btn_color1;
-
-            .Link {
-                color: $btn_color2;
-                text-transform: none;
-                font-weight: 900;
-            }
+            color: $btn_color2;
+            text-transform: none;
+            font-weight: 900;
 
             @media (max-width: 480px) {
                 display: none;

@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { Box, Button, Menu, MenuItem, Fade } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Login } from '../login';
 import styles from './styles.module.scss';
 
 export const Header = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
+    const navigate = useNavigate();
 
     const handleClick = (event: React.MouseEvent<HTMLElement>) =>
         setAnchorEl(event.currentTarget);
@@ -18,6 +19,7 @@ export const Header = () => {
     const toRegister = () => {
         const target: any = document.getElementById('#register');
         target.scrollIntoView({ behavior: 'smooth' });
+        navigate('register#register')
     };
 
     return (
@@ -45,22 +47,18 @@ export const Header = () => {
                     onClose={handleClose}
                     TransitionComponent={Fade}
                 >
-                    <MenuItem className={styles.MenuItem} onClick={handleClose}>
-                        <Link to="login" className={styles.Link}>
-                            Log in
-                        </Link>
+                    <MenuItem 
+                        className={styles.MenuItem} 
+                        onClick={handleClose}
+                    >
+                        Log in
                     </MenuItem>
                     <MenuItem
                         className={styles.MenuItem}
                         // onClick={handleClose}
+                        onClick={toRegister}
                     >
-                        <Link
-                            to="register#register"
-                            className={styles.Link}
-                            onClick={toRegister}
-                        >
-                            Sign Up
-                        </Link>
+                        Sign Up
                     </MenuItem>
                 </Menu>
                 <Login />
@@ -69,9 +67,7 @@ export const Header = () => {
                     variant="contained"
                     onClick={toRegister}
                 >
-                    <Link to="register#register" className={styles.Link}>
-                        Sign Up
-                    </Link>
+                    Sign Up
                 </Button>
             </Box>
         </header>

@@ -17,21 +17,15 @@ import { useForm } from 'react-hook-form';
 import styles from './styles.module.scss';
 
 export const Register = () => {
+    const navigate = useNavigate();
+    const token = Cookies.get('token');
     const [showPassword1, setShowPassword1] = useState<boolean>(false);
     const [showPassword2, setShowPassword2] = useState<boolean>(false);
-
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
-
-    const [data, setData] = useState<string>('');
-
-    const navigate = useNavigate();
-
-    const token = Cookies.get('token');
-
     const [
         registerUsers,
         { data: authRegister, isLoading, isSuccess, isError },
@@ -43,23 +37,22 @@ export const Register = () => {
     const handleMouseDownPassword = (
         event: React.MouseEvent<HTMLButtonElement>
     ) => event.preventDefault();
-    
+
     const SubmitFormHandler = (value: any) => {
         registerUsers(value);
     };
 
-    if (isError) return <Alert severity="error">isError RTK Error!</Alert>;
+    // if (isError) return <Alert severity="error">isError RTK Error!</Alert>;
 
-    if (isLoading) return <CircularProgress disableShrink />;
+    // if (isLoading) return <CircularProgress disableShrink />;
 
     return (
         <Box className={styles.register} id="#register">
             <Box
-                className={styles.Box}
                 component="form"
                 // noValidate
                 autoComplete="off"
-                // onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}
+                className={styles.Box}
                 onSubmit={handleSubmit(SubmitFormHandler)}
             >
                 <Typography variant="h4" className={styles.Typography}>
@@ -68,9 +61,9 @@ export const Register = () => {
                 <OutlinedInput
                     color="secondary"
                     placeholder="Name"
-                    className={styles.TextField}
                     type="text"
-                    autoComplete="name"
+                    autoComplete=""
+                    className={styles.TextField}
                     {...register('name', {
                         pattern: /^[A-Za-z]+$/i,
                         required: true,
@@ -81,9 +74,9 @@ export const Register = () => {
                 <OutlinedInput
                     color="secondary"
                     placeholder="Email"
-                    className={styles.TextField}
                     type="email"
-                    autoComplete="email"
+                    autoComplete=""
+                    className={styles.TextField}
                     {...register('email', {
                         pattern:
                             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -93,9 +86,9 @@ export const Register = () => {
                 <OutlinedInput
                     color="secondary"
                     placeholder="Create password"
-                    className={styles.TextField}
                     type={showPassword1 ? 'text' : 'password'}
                     autoComplete="confirmPassword"
+                    className={styles.TextField}
                     {...register('password', {
                         required: true,
                         minLength: 3,
@@ -119,15 +112,15 @@ export const Register = () => {
                 />
                 <OutlinedInput
                     color="secondary"
-                    placeholder="confirm password"
-                    className={styles.TextField}
+                    placeholder="Confirm password"
                     type={showPassword2 ? 'text' : 'password'}
                     autoComplete="ConfirmPassword"
-                    {...register("password", {
-                        required: true,
-                        minLength: 3,
-                        maxLength: 20,
-                    })}
+                    className={styles.TextField}
+                    // {...register('password', {
+                    //     required: true,
+                    //     minLength: 3,
+                    //     maxLength: 20,
+                    // })}
                     endAdornment={
                         <InputAdornment position="end">
                             <IconButton
@@ -145,14 +138,12 @@ export const Register = () => {
                     }
                 />
                 <Button
-                    type="submit"
+                    className={styles.Button}
                     variant="contained"
                     color="primary"
-                    className={styles.Button}
+                    type="submit"
                 >
-                    <Link to="cv" className={styles.Link}>
-                        Try now
-                    </Link>
+                    Try now
                 </Button>
             </Box>
         </Box>
