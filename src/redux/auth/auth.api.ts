@@ -1,6 +1,6 @@
 import { api } from '../index.api';
 import { RegisterTypes, LoginTypes, LogoutTypes } from './auth.types';
-import { transformResponse, transformErrorResponse } from '../../utils/transformResponse';
+import { transformResponse, transformErrorResponse } from '../../utils/response';
 
 export const authApi = api.injectEndpoints({
     endpoints: (builder) => ({
