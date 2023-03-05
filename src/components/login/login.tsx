@@ -153,6 +153,7 @@ export const Login = () => {
                             sx={modalButtonsStyle}
                             variant="contained"
                             onClick={handleClose}
+                            color='primary'
                         >
                             Cancel
                         </Button>
@@ -160,6 +161,7 @@ export const Login = () => {
                             sx={modalButtonsStyle}
                             variant="contained"
                             type="submit"
+                            color='primary'
                         >
                             Ok
                         </Button>

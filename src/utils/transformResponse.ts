@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie';
 
 export const transformResponse = (response: any) => {
-    console.log(`Success: ` + response?.message);
+    console.log(`transformResponse: ` + response?.message);
     return response;
 };
 
