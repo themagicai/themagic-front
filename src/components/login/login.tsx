@@ -106,6 +106,7 @@ export const Login = () => {
                     <Typography fontWeight={800} variant="h5" component="h1">
                         Login
                     </Typography>
+                    <br />
                     <OutlinedInput
                         sx={modalInputsStyle}
                         color="secondary"
@@ -118,6 +119,7 @@ export const Login = () => {
                             required: true,
                         })}
                     />
+                    <br />
                     <OutlinedInput
                         sx={modalInputsStyle}
                         color="secondary"
@@ -145,6 +147,7 @@ export const Login = () => {
                             </InputAdornment>
                         }
                     />
+                    <br />
                     <Box sx={BoxButtonsStyle}>
                         <Button
                             sx={modalButtonsStyle}
