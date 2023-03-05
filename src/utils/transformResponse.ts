@@ -1,8 +1,7 @@
-// import { message } from 'antd';
 import Cookies from 'js-cookie';
 
 export const transformResponse = (response: any) => {
-    // message.success(response?.message);
+    console.log(`Success: ` + response?.message);
     return response;
 };
 

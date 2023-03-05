@@ -3,6 +3,7 @@ export { Cards } from './cards';
 export { Footer } from './footer';
 export { Header } from './header';
 export { Layout } from './layout';
+export { Logout } from './logout';
 export { Login } from './login';
 export { Register } from './register';
 export { VideoConcept } from './video-concept';

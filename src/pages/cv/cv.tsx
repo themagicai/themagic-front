@@ -51,6 +51,7 @@ export const CVPage = () => {
                             className={styles.TextareaAutosize}
                             placeholder="Enter vacancy requirement"
                             required
+                            autoFocus={false}
                         />
                     </Box>
                     <Box className={styles.personalInformation}>

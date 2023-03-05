@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { Box, Button, Menu, MenuItem, Fade, Typography } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
-import { Link, useNavigate } from 'react-router-dom';
-import { Login } from '../login';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Login, Logout } from '../';
 import styles from './styles.module.scss';
 
 export const Header = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const navigate = useNavigate();
+    const { pathname } = useLocation();
+    const [btn, setBtn] = useState<boolean>(false);
 
     const handleClick = (event: React.MouseEvent<HTMLElement>) =>
         setAnchorEl(event.currentTarget);
@@ -22,10 +24,14 @@ export const Header = () => {
         navigate('register#register');
     };
 
+    if (pathname === 'cv') {
+        setBtn(btn === true);
+    }
+
     return (
         <header className={styles.header}>
             <Box className={styles.navLeft}>
-                <Typography className={styles.Typography} variant='h4'>
+                <Typography className={styles.Typography} variant="h4">
                     THE MAGIC AI
                 </Typography>
             </Box>
@@ -60,14 +66,18 @@ export const Header = () => {
                         Sign Up
                     </MenuItem>
                 </Menu>
-                <Login />
-                <Button
-                    className={styles.Button2}
-                    variant="contained"
-                    onClick={toRegister}
-                >
-                    Sign Up
-                </Button>
+                {btn ? <Login /> : null}
+                {btn ? (
+                    <Logout />
+                ) : (
+                    <Button
+                        className={styles.Button2}
+                        variant="contained"
+                        onClick={toRegister}
+                    >
+                        Sign Up
+                    </Button>
+                )}
             </Box>
         </header>
     );
