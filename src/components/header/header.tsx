@@ -66,7 +66,7 @@ export const Header = () => {
                         Sign Up
                     </MenuItem>
                 </Menu>
-                {btn ? <Login /> : null}
+                {btn ? null : <Login />}
                 {btn ? (
                     <Logout />
                 ) : (
