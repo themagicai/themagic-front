@@ -30,6 +30,24 @@ const modalFormStyle = {
     borderRadius: '10px',
 };
 
+const modalInputsStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+};
+
+const BoxButtonsStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+};
+
+const modalButtonsStyle: React.CSSProperties = {
+    backgroundColor: '#333',
+    borderRadius: '5px',
+    textTransform: 'none',
+};
+
 export const Login = () => {
     const [open, setOpen] = useState<boolean>(false);
     const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -58,8 +76,8 @@ export const Login = () => {
     };
 
     if (isSuccess) {
-        navigate('cv')
-    };
+        navigate('cv');
+    }
 
     useEffect(() => {
         if (authLogin) {
@@ -85,14 +103,15 @@ export const Login = () => {
                     noValidate
                     onSubmit={handleSubmit(SubmitFormHandler)}
                 >
-                    <Typography variant="h5" component="h1">
+                    <Typography fontWeight={800} variant="h5" component="h1">
                         Login
                     </Typography>
                     <OutlinedInput
+                        sx={modalInputsStyle}
                         color="secondary"
-                        placeholder="Email"
                         type="email"
                         autoComplete=""
+                        placeholder="Email"
                         {...register('email', {
                             pattern:
                                 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -100,10 +119,11 @@ export const Login = () => {
                         })}
                     />
                     <OutlinedInput
+                        sx={modalInputsStyle}
                         color="secondary"
-                        placeholder="Create password"
                         type={showPassword ? 'text' : 'password'}
                         autoComplete=""
+                        placeholder="Create password"
                         {...register('password1', {
                             required: true,
                             minLength: 3,
@@ -125,12 +145,20 @@ export const Login = () => {
                             </InputAdornment>
                         }
                     />
-                    <Box>
-                        <Button variant="contained" onClick={handleClose}>
-                            cancel
+                    <Box sx={BoxButtonsStyle}>
+                        <Button
+                            sx={modalButtonsStyle}
+                            variant="contained"
+                            onClick={handleClose}
+                        >
+                            Cancel
                         </Button>
-                        <Button variant="contained" type="submit">
-                            ok
+                        <Button
+                            sx={modalButtonsStyle}
+                            variant="contained"
+                            type="submit"
+                        >
+                            Ok
                         </Button>
                     </Box>
                 </Box>
