@@ -1,13 +1,8 @@
-import { Alert } from '@mui/material';
+// import { message } from 'antd';
 import Cookies from 'js-cookie';
 
 export const transformResponse = (response: any) => {
-    return (
-        <Alert severity="success">
-            This is a success alert — check it out! {response?.message}
-        </Alert>
-    );
-
+    // message.success(response?.message);
     return response;
 };
 

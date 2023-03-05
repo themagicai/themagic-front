@@ -1,21 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
 $colorBackInput: #353535;
-$colorInputText: #6f6f6f;
+$colorInputText: #9c9c9c;
 $inputBorderRadius: 12px;
 
-@mixin TextField {
+@mixin OutlinedInput {
     background-color: $colorBackInput;
     border-radius: $inputBorderRadius;
     color: $colorInputText;
+
+    // @media (max-width: 769px) {
+    //     width: 500px;
+    // }
 }
 
-@mixin TextFieldBig {
-    @include TextField;
+@mixin TextareaAutosize {
+    @include OutlinedInput;
     width: 700px;
     height: 400px !important;
     border-color: #aa1ecd;
     padding: 20px;
+
+    @media (max-width: 769px) {
+        max-width: 450px;
+    }
+
+    @media (max-width: 480px) {
+        max-width: 330px;
+        padding: 5px;
+    }
 }
 
 @mixin Button {
@@ -54,8 +67,8 @@ $inputBorderRadius: 12px;
                     column-gap: 20px;
                     margin-bottom: 20px;
 
-                    .TextField {
-                        @include TextField;
+                    .OutlinedInput {
+                        @include OutlinedInput;
                     }
 
                     @media (max-width: 769px) {
@@ -65,8 +78,8 @@ $inputBorderRadius: 12px;
                     }
                 }
 
-                .TextFieldBig {
-                    @include TextFieldBig;
+                .TextareaAutosize {
+                    @include TextareaAutosize;
                 }
             }
 
@@ -105,20 +118,22 @@ $inputBorderRadius: 12px;
                     }
 
                     .TextareaAutosize {
-                        @include TextField;
-                        max-width: 450px;
-                        min-height: 22px !important;
-                        padding: 10px;
-                        border: none;
+                        @include OutlinedInput;
+                        max-width: 250px;
+                        height: 40px !important;
+                        padding: 12px;
+                        border-color: #222;
+                    }
 
-                        &:focus {
-                            border: none;
-                        }
+                    @media (max-width: 769px){
+                        align-items: flex-start;
+                        flex-direction: column;
+                        row-gap: 15px;
                     }
                 }
 
-                .TextFieldBig {
-                    @include TextFieldBig;
+                .TextareaAutosize {
+                    @include TextareaAutosize;
                 }
 
                 .Buttons {
@@ -149,8 +164,8 @@ $inputBorderRadius: 12px;
                     padding-bottom: 20px;
                 }
 
-                .TextFieldBig {
-                    @include TextFieldBig;
+                .TextareaAutosize {
+                    @include TextareaAutosize;
                 }
 
                 .Box {
@@ -162,6 +177,10 @@ $inputBorderRadius: 12px;
                     }
                 }
             }
+
+            // @media (max-width: 769px) {
+            //     width: 80%;
+            // }
         }
     }
 }

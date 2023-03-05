@@ -31,7 +31,7 @@ export const CVPage = () => {
                         </Typography>
                         <Box className={styles.twoTextField}>
                             <OutlinedInput
-                                className={styles.TextField}
+                                className={styles.OutlinedInput}
                                 type="text"
                                 color="secondary"
                                 placeholder="Enter company name"
@@ -39,7 +39,7 @@ export const CVPage = () => {
                                 size="small"
                             />
                             <OutlinedInput
-                                className={styles.TextField}
+                                className={styles.OutlinedInput}
                                 type="Email"
                                 color="secondary"
                                 placeholder="Enter position"
@@ -48,7 +48,7 @@ export const CVPage = () => {
                             />
                         </Box>
                         <TextareaAutosize
-                            className={styles.TextFieldBig}
+                            className={styles.TextareaAutosize}
                             placeholder="Enter vacancy requirement"
                             required
                         />
@@ -100,15 +100,13 @@ export const CVPage = () => {
                                 </Select>
                             </FormControl>
                             <TextareaAutosize
-                                maxRows={3}
                                 className={styles.TextareaAutosize}
                                 placeholder="Enter your skills"
                                 required
-                                color="secondary"
                             />
                         </Box>
                         <TextareaAutosize
-                            className={styles.TextFieldBig}
+                            className={styles.TextareaAutosize}
                             placeholder="Enter summary about yourself, job experience, education, licenses & certifications..."
                             required
                         />
@@ -132,7 +130,7 @@ export const CVPage = () => {
                             Result
                         </Typography>
                         <TextareaAutosize
-                            className={styles.TextFieldBig}
+                            className={styles.TextareaAutosize}
                             // placeholder=""
                             // required
                         />

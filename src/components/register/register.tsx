@@ -46,15 +46,15 @@ export const Register = () => {
         }
     };
 
-    if (isError) return <Alert severity="error"> isError RTK Error! </Alert>;
+    // if (isError) return <Alert severity="error"> isError RTK Error! </Alert>;
 
-    if (isLoading) return <CircularProgress disableShrink />;
+    // if (isLoading) return <CircularProgress disableShrink />;
 
     return (
         <Box className={styles.register} id="#register">
             <Box
                 component="form"
-                // noValidate
+                noValidate
                 autoComplete="off"
                 className={styles.Box}
                 onSubmit={handleSubmit(SubmitFormHandler)}

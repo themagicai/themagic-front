@@ -11,7 +11,7 @@ export const authApi = api.injectEndpoints({
                 body,
             }),
             invalidatesTags: ['auth'],
-            transformResponse,
+            // transformResponse,
             transformErrorResponse,
         }),
         loginUsers: builder.mutation<LoginTypes, any>({
@@ -21,7 +21,7 @@ export const authApi = api.injectEndpoints({
                 body,
             }),
             invalidatesTags: ['auth'],
-            transformResponse,
+            // transformResponse,
             transformErrorResponse
         }),
         logoutUsers: builder.mutation<LogoutTypes, any>({
@@ -30,7 +30,7 @@ export const authApi = api.injectEndpoints({
                 body,
             }),
             invalidatesTags: ['auth'],
-            transformResponse,
+            // transformResponse,
         }),
     }),
 });
