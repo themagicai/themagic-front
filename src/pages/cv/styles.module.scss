@@ -4,14 +4,20 @@ $colorBackInput: #353535;
 $colorInputText: #9c9c9c;
 $inputBorderRadius: 12px;
 
+@mixin Typography {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    margin-bottom: 20px;
+
+    @media (max-width: 480px) {
+        font-size: 25px;
+    }
+}
+
 @mixin OutlinedInput {
     background-color: $colorBackInput;
     border-radius: $inputBorderRadius;
     color: $colorInputText;
-
-    // @media (max-width: 769px) {
-    //     width: 500px;
-    // }
 }
 
 @mixin TextareaAutosize {
@@ -26,7 +32,12 @@ $inputBorderRadius: 12px;
     }
 
     @media (max-width: 480px) {
-        max-width: 330px;
+        max-width: 400px;
+        padding: 5px;
+    }
+
+    @media (max-width: 440px) {
+        max-width: 350px;
         padding: 5px;
     }
 }
@@ -56,9 +67,7 @@ $inputBorderRadius: 12px;
                 padding-top: 50px;
 
                 .Typography {
-                    font-family: 'Montserrat', sans-serif;
-                    font-weight: 800;
-                    margin-bottom: 20px;
+                    @include Typography;
                 }
 
                 .twoTextField {
@@ -87,9 +96,7 @@ $inputBorderRadius: 12px;
                 padding: 80px 0;
 
                 .Typography {
-                    font-family: 'Montserrat', sans-serif;
-                    font-weight: 800;
-                    padding-bottom: 20px;
+                    @include Typography;
                 }
 
                 .BoxPersonalInputs {
@@ -125,7 +132,7 @@ $inputBorderRadius: 12px;
                         border-color: #222;
                     }
 
-                    @media (max-width: 769px){
+                    @media (max-width: 769px) {
                         align-items: flex-start;
                         flex-direction: column;
                         row-gap: 15px;
@@ -159,9 +166,7 @@ $inputBorderRadius: 12px;
                 column-gap: 20px;
 
                 .Typography {
-                    font-family: 'Montserrat', sans-serif;
-                    font-weight: 800;
-                    padding-bottom: 20px;
+                    @include Typography;
                 }
 
                 .TextareaAutosize {
