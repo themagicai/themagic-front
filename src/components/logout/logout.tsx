@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Box, Button } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useLogoutUsersMutation } from '../../redux/index.endpoints';
 import Cookies from 'js-cookie';
 import styles from './styles.module.scss';

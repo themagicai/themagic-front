@@ -7,11 +7,9 @@ import {
     OutlinedInput,
     InputAdornment,
     IconButton,
-    Alert,
-    CircularProgress,
 } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useLoginUsersMutation } from '../../redux/index.endpoints';
 import Cookies from 'js-cookie';
@@ -59,7 +57,6 @@ export const Login = () => {
     const [loginUsers, { data: authLogin, isLoading, isSuccess, isError }] =
         useLoginUsersMutation();
     const navigate = useNavigate();
-    const token = Cookies.get('token');
 
     const handleOpen = () => setOpen(true);
 
@@ -73,15 +70,12 @@ export const Login = () => {
 
     const SubmitFormHandler = (values: any) => {
         loginUsers(values);
+        if (isSuccess) navigate('cv');
     };
-
-    if (isSuccess) {
-        navigate('cv');
-    }
 
     useEffect(() => {
         if (authLogin) {
-            Cookies.set('token', authLogin.data.email, {
+            Cookies.set("token", authLogin.email, {
                 expires: 7,
             });
         }

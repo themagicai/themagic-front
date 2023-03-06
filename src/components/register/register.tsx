@@ -6,24 +6,18 @@ import {
     OutlinedInput,
     InputAdornment,
     IconButton,
-    Alert,
-    CircularProgress,
 } from '@mui/material';
 import { VisibilityOff, Visibility } from '@mui/icons-material';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 import Cookies from 'js-cookie';
 import { useRegisterUsersMutation } from '../../redux/index.endpoints';
-import { useForm } from 'react-hook-form';
 import styles from './styles.module.scss';
 
 export const Register = () => {
     const [showPassword1, setShowPassword1] = useState<boolean>(false);
     const [showPassword2, setShowPassword2] = useState<boolean>(false);
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
+    const { register, handleSubmit } = useForm();
     const [
         registerUsers,
         { data: authRegister, isLoading, isSuccess, isError },
@@ -41,7 +35,7 @@ export const Register = () => {
 
     const SubmitFormHandler = (values: any) => {
         registerUsers(values);
-        if(isSuccess) {
+        if (isSuccess) {
             navigate('/cv');
         }
     };

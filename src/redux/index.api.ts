@@ -32,7 +32,7 @@ export const api = createApi({
     ],
     endpoints: (builder) => ({
         getUsers: builder.query<UserTypes[], string>({
-            query: () => `/register`,
+            query: () => `/users`,
         }),
     }),
 });
