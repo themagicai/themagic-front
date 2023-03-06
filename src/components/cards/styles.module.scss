@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
+@mixin Typography {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
 .cards {
     background-color: transparent;
     padding: 80px 240px;
@@ -9,16 +14,14 @@
         padding-bottom: 20px;
 
         .Typography1 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
+            @include Typography;
         }
 
         .Typography2 {
-            background: -webkit-linear-gradient(left, #139EBC, #ff01f2);
+            @include Typography;
+            background: -webkit-linear-gradient(left, #139ebc, #ff01f2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: 700;
-            font-family: 'Montserrat', sans-serif;
         }
     }
 
@@ -56,8 +59,8 @@
         }
 
         @media (max-width: 480px) {
-            display: grid;
-            grid-template-columns: auto;
+            display: flex;
+            flex-direction: column;
             row-gap: 20px;
             padding: 10px;
         }
