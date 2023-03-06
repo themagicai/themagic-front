@@ -47,6 +47,7 @@ const modalButtonsStyle: React.CSSProperties = {
 };
 
 export const Login = () => {
+    const token = Cookies.get('token');
     const [open, setOpen] = useState<boolean>(false);
     const [showPassword, setShowPassword] = useState<boolean>(false);
     const {
@@ -75,11 +76,15 @@ export const Login = () => {
 
     useEffect(() => {
         if (authLogin) {
-            Cookies.set("token", authLogin.email, {
+            Cookies.set('token', authLogin.email, {
                 expires: 7,
             });
         }
     }, [isSuccess]);
+
+    useEffect(() => {
+        if (!token) navigate('/');
+    }, [token]);
 
     // if (isError) return <Alert severity="error">isError RTK Error!</Alert>;
 
@@ -147,7 +152,7 @@ export const Login = () => {
                             sx={modalButtonsStyle}
                             variant="contained"
                             onClick={handleClose}
-                            color='primary'
+                            color="primary"
                         >
                             Cancel
                         </Button>
@@ -155,7 +160,7 @@ export const Login = () => {
                             sx={modalButtonsStyle}
                             variant="contained"
                             type="submit"
-                            color='primary'
+                            color="primary"
                         >
                             Ok
                         </Button>

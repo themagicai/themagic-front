@@ -17,7 +17,7 @@ export const api = createApi({
     refetchOnFocus: true,
     tagTypes: [
         'cv-detail',
-        'letter-deatil',
+        'letter-detail',
         'login',
         'logout',
         'make-cv',

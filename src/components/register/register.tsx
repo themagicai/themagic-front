@@ -7,14 +7,15 @@ import {
     InputAdornment,
     IconButton,
 } from '@mui/material';
+import Cookies from 'js-cookie';
 import { VisibilityOff, Visibility } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import Cookies from 'js-cookie';
 import { useRegisterUsersMutation } from '../../redux/index.endpoints';
 import styles from './styles.module.scss';
 
 export const Register = () => {
+    const token = Cookies.get('token');
     const [showPassword1, setShowPassword1] = useState<boolean>(false);
     const [showPassword2, setShowPassword2] = useState<boolean>(false);
     const { register, handleSubmit } = useForm();
@@ -23,7 +24,6 @@ export const Register = () => {
         { data: authRegister, isLoading, isSuccess, isError },
     ] = useRegisterUsersMutation();
     const navigate = useNavigate();
-    const token = Cookies.get('token');
 
     const handleClickShowPassword1 = () => setShowPassword1((show) => !show);
 
