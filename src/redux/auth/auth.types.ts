@@ -22,3 +22,5 @@ export type ResponseRegisterTypes = {};
 export type ResponseLoginTypes = {};
 
 export type ResponseLogoutTypes = {};
+
+export type ResponseRefreshTokenTypes = {};
