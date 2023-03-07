@@ -11,7 +11,7 @@ export const Logout = () => {
     const [logoutUsers, { isLoading, isSuccess, isError }] =
         useLogoutAuthMutation();
 
-    const logoutBtn: React.MouseEventHandler = () => {
+    const logoutBtn: React.MouseEventHandler<HTMLElement> = () => {
         Cookies.remove('token');
         navigate('/');
     };

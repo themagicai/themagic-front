@@ -59,11 +59,12 @@ export const Login = () => {
         useLoginAuthMutation();
     const navigate = useNavigate();
 
-    const handleOpen = () => setOpen(true);
+    const handleOpen: React.MouseEventHandler<HTMLElement> = () => setOpen(true);
 
-    const handleClose = () => setOpen(false);
+    const handleClose: React.MouseEventHandler<HTMLElement> = () => setOpen(false);
 
-    const handleClickShowPassword = () => setShowPassword((show) => !show);
+    const handleClickShowPassword: React.MouseEventHandler<HTMLElement> = () =>
+        setShowPassword((show) => !show);
 
     const handleMouseDownPassword = (
         event: React.MouseEvent<HTMLButtonElement>

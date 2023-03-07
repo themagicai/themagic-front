@@ -23,9 +23,11 @@ export const Register = () => {
         useRegisterAuthMutation();
     const navigate = useNavigate();
 
-    const handleClickShowPassword1 = () => setShowPassword1((show) => !show);
+    const handleClickShowPassword1: React.MouseEventHandler = () =>
+        setShowPassword1((show) => !show);
 
-    const handleClickShowPassword2 = () => setShowPassword2((show) => !show);
+    const handleClickShowPassword2: React.MouseEventHandler = () =>
+        setShowPassword2((show) => !show);
 
     const handleMouseDownPassword = (
         event: React.MouseEvent<HTMLButtonElement>
