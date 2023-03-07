@@ -4,7 +4,7 @@ import { transformResponse, transformErrorResponse } from '../../utils/transform
 
 export const authApi = api.injectEndpoints({
     endpoints: (builder) => ({
-        registerAuth: builder.mutation<RegisterTypes[], any>({
+        registerAuth: builder.mutation<any, RegisterTypes[]>({
             query: (body) => ({
                 url: 'api/register',
                 method: 'POST',
@@ -13,7 +13,7 @@ export const authApi = api.injectEndpoints({
             invalidatesTags: ['register'],
             transformResponse,
         }),
-        loginAuth: builder.mutation<LoginTypes, any>({
+        loginAuth: builder.mutation<any, RegisterTypes[]>({
             query: (body) => ({
                 url: 'api/login',
                 method: 'POST',
@@ -23,7 +23,7 @@ export const authApi = api.injectEndpoints({
             transformResponse,
             transformErrorResponse,
         }),
-        logoutAuth: builder.mutation<LogoutTypes, any>({
+        logoutAuth: builder.mutation<any, LogoutTypes[]>({
             query: (body) => ({
                 url: 'api/logout',
                 method: 'POST',
