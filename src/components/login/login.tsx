@@ -11,7 +11,7 @@ import {
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { useLoginUsersMutation } from '../../redux/index.endpoints';
+import { useLoginAuthMutation } from '../../redux/index.endpoints';
 import Cookies from 'js-cookie';
 import styles from './styles.module.scss';
 
@@ -55,8 +55,8 @@ export const Login = () => {
         handleSubmit,
         formState: { errors },
     } = useForm();
-    const [loginUsers, { data: authLogin, isLoading, isSuccess, isError }] =
-        useLoginUsersMutation();
+    const [loginUsers, { isLoading, isSuccess, isError }] =
+        useLoginAuthMutation();
     const navigate = useNavigate();
 
     const handleOpen = () => setOpen(true);
@@ -74,13 +74,13 @@ export const Login = () => {
         if (isSuccess) navigate('cv');
     };
 
-    useEffect(() => {
-        if (authLogin) {
-            Cookies.set('token', authLogin.email, {
-                expires: 7,
-            });
-        }
-    }, [isSuccess]);
+    // useEffect(() => {
+    //     if (isLogin) {
+    //         Cookies.set('token', isLogin.email, {
+    //             expires: 7,
+    //         });
+    //     }
+    // }, [isSuccess]);
 
     useEffect(() => {
         if (!token) navigate('/');

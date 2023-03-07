@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
 import { Box, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { useLogoutUsersMutation } from '../../redux/index.endpoints';
+import { useLogoutAuthMutation } from '../../redux/index.endpoints';
 import Cookies from 'js-cookie';
 import styles from './styles.module.scss';
 
 export const Logout = () => {
     const token = Cookies.get('token');
     const navigate = useNavigate();
-    const [logoutUsers, { data: authLogout, isLoading, isSuccess, isError }] =
-        useLogoutUsersMutation();
+    const [logoutUsers, { isLoading, isSuccess, isError }] =
+        useLogoutAuthMutation();
 
     const logoutBtn: React.MouseEventHandler = () => {
-        Cookies.remove("token");
+        Cookies.remove('token');
         navigate('/');
     };
 

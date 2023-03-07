@@ -11,13 +11,13 @@ import {
 
 export const authApi = api.injectEndpoints({
     endpoints: (builder) => ({
-        cvResult: builder.mutation<ResultTypes, any>({
+        cvDetail: builder.mutation<VacancyRequirementTypes, any>({
             query: (body) => ({
-                url: 'api/register',
+                url: 'api/cv-detail',
                 method: 'POST',
                 body,
             }),
-            invalidatesTags: ['auth'],
+            invalidatesTags: ['cv-detail'],
             transformResponse,
             transformErrorResponse,
         }),

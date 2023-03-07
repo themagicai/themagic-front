@@ -11,7 +11,7 @@ import Cookies from 'js-cookie';
 import { VisibilityOff, Visibility } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { useRegisterUsersMutation } from '../../redux/index.endpoints';
+import { useRegisterAuthMutation } from '../../redux/index.endpoints';
 import styles from './styles.module.scss';
 
 export const Register = () => {
@@ -19,10 +19,8 @@ export const Register = () => {
     const [showPassword1, setShowPassword1] = useState<boolean>(false);
     const [showPassword2, setShowPassword2] = useState<boolean>(false);
     const { register, handleSubmit } = useForm();
-    const [
-        registerUsers,
-        { data: authRegister, isLoading, isSuccess, isError },
-    ] = useRegisterUsersMutation();
+    const [registerAuth, { isLoading, isSuccess, isError }] =
+        useRegisterAuthMutation();
     const navigate = useNavigate();
 
     const handleClickShowPassword1 = () => setShowPassword1((show) => !show);
@@ -34,10 +32,8 @@ export const Register = () => {
     ) => event.preventDefault();
 
     const SubmitFormHandler = (values: any) => {
-        registerUsers(values);
-        if (isSuccess) {
-            navigate('/cv');
-        }
+        registerAuth(values);
+        if (isSuccess) navigate('/cv');
     };
 
     // if (isError) return <Alert severity="error"> isError RTK Error! </Alert>;
