@@ -12,3 +12,13 @@ export type LoginTypes = {
 export type LogoutTypes = {
     refresh: string;
 };
+
+export type RefreshTokenTypes = {
+    refresh: string;
+};
+
+export type ResponseRegisterTypes = {};
+
+export type ResponseLoginTypes = {};
+
+export type ResponseLogoutTypes = {};
