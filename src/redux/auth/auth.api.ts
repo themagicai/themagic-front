@@ -4,14 +4,11 @@ import { transformResponse, transformErrorResponse } from '../../utils/transform
 
 export const authApi = api.injectEndpoints({
     endpoints: (builder) => ({
-        registerAuth: builder.mutation<RegisterTypes, any>({
+        registerAuth: builder.mutation<RegisterTypes[], any>({
             query: (body) => ({
                 url: 'api/register',
                 method: 'POST',
                 body,
-                headers: {
-                    'Content-type': 'application/json'
-                },
             }),
             invalidatesTags: ['register'],
             transformResponse,
@@ -21,9 +18,6 @@ export const authApi = api.injectEndpoints({
                 url: 'api/login',
                 method: 'POST',
                 body,
-                headers: {
-                    'Content-type': 'application/json'
-                },
             }),
             invalidatesTags: ['login'],
             transformResponse,
@@ -34,9 +28,6 @@ export const authApi = api.injectEndpoints({
                 url: 'api/logout',
                 method: 'POST',
                 body,
-                headers: {
-                    'Content-type': 'application/json'
-                },
             }),
             invalidatesTags: ['logout'],
             transformResponse,
