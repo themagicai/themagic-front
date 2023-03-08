@@ -16,9 +16,9 @@ export const Logout = () => {
         navigate('/');
     };
 
-    useEffect(() => {
-        if (!token) navigate('/');
-    }, [token]);
+    // useEffect(() => {
+    //     if (!token) navigate('/');
+    // }, [token]);
 
     return (
         <Box>

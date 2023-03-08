@@ -33,7 +33,7 @@ export const Register = () => {
         event: React.MouseEvent<HTMLButtonElement>
     ) => event.preventDefault();
 
-    const SubmitFormHandler = (values: any) => {
+    const formSubmit = (values: any) => {
         registerAuth(values);
         if (isSuccess) navigate('/cv');
     };
@@ -49,7 +49,7 @@ export const Register = () => {
                 noValidate
                 autoComplete="off"
                 className={styles.Box}
-                onSubmit={handleSubmit(SubmitFormHandler)}
+                onSubmit={handleSubmit(formSubmit)}
             >
                 <Typography variant="h4" className={styles.Typography}>
                     Try now for <span>FREE!</span>

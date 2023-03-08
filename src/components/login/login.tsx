@@ -50,18 +50,16 @@ export const Login = () => {
     const token = Cookies.get('token');
     const [open, setOpen] = useState<boolean>(false);
     const [showPassword, setShowPassword] = useState<boolean>(false);
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
+    const { register, handleSubmit } = useForm();
     const [loginUsers, { isLoading, isSuccess, isError }] =
         useLoginAuthMutation();
     const navigate = useNavigate();
 
-    const handleOpen: React.MouseEventHandler<HTMLElement> = () => setOpen(true);
+    const handleOpen: React.MouseEventHandler<HTMLElement> = () =>
+        setOpen(true);
 
-    const handleClose: React.MouseEventHandler<HTMLElement> = () => setOpen(false);
+    const handleClose: React.MouseEventHandler<HTMLElement> = () =>
+        setOpen(false);
 
     const handleClickShowPassword: React.MouseEventHandler<HTMLElement> = () =>
         setShowPassword((show) => !show);
@@ -70,7 +68,7 @@ export const Login = () => {
         event: React.MouseEvent<HTMLButtonElement>
     ) => event.preventDefault();
 
-    const SubmitFormHandler = (values: any) => {
+    const formSubmit = (values: any) => {
         loginUsers(values);
         if (isSuccess) navigate('cv');
     };
@@ -101,7 +99,7 @@ export const Login = () => {
                     sx={modalFormStyle}
                     component="form"
                     noValidate
-                    onSubmit={handleSubmit(SubmitFormHandler)}
+                    onSubmit={handleSubmit(formSubmit)}
                 >
                     <Typography fontWeight={800} variant="h5" component="h1">
                         Login
