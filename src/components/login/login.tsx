@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Cookies from 'js-cookie';
 import {
     Box,
     Button,
@@ -12,7 +13,6 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useLoginAuthMutation } from '../../redux/index.endpoints';
-import Cookies from 'js-cookie';
 import styles from './styles.module.scss';
 
 const modalFormStyle = {
@@ -70,8 +70,9 @@ export const Login = () => {
 
     const formSubmit = (values: any) => {
         loginUsers(values);
-        if (isSuccess) navigate('cv');
     };
+
+    if (isSuccess) navigate('cv');
 
     // useEffect(() => {
     //     if (isLogin) {

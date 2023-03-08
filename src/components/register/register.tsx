@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Cookies from 'js-cookie';
 import {
     Button,
     Box,
@@ -7,7 +8,6 @@ import {
     InputAdornment,
     IconButton,
 } from '@mui/material';
-import Cookies from 'js-cookie';
 import { VisibilityOff, Visibility } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
@@ -35,8 +35,9 @@ export const Register = () => {
 
     const formSubmit = (values: any) => {
         registerAuth(values);
-        if (isSuccess) navigate('/cv');
     };
+
+    if (isSuccess) navigate('/cv');
 
     // if (isError) return <Alert severity="error"> isError RTK Error! </Alert>;
 
