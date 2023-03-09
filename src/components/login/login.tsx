@@ -70,6 +70,7 @@ export const Login = () => {
 
     const formSubmit = (values: any) => {
         loginUsers(values);
+        console.log(values);
     };
 
     if (isSuccess) navigate('cv');
@@ -85,10 +86,6 @@ export const Login = () => {
     useEffect(() => {
         if (!token) navigate('/');
     }, [token]);
-
-    // if (isError) return <Alert severity="error">isError RTK Error!</Alert>;
-
-    // if (isLoading) return <CircularProgress disableShrink />;
 
     return (
         <Box className={styles.login}>
@@ -125,7 +122,7 @@ export const Login = () => {
                         type={showPassword ? 'text' : 'password'}
                         autoComplete=""
                         placeholder="Create password"
-                        {...register('password1', {
+                        {...register('password', {
                             required: true,
                             minLength: 3,
                             maxLength: 20,

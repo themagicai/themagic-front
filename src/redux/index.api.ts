@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 import { UserTypes } from './index.types';
 
 export const api = createApi({
-    reducerPath: 'api',
+    reducerPath: 'api/themagicai',
     baseQuery: fetchBaseQuery({
         baseUrl: import.meta.env.VITE_SOME_KEY,
         prepareHeaders: (headers) => {

@@ -15,13 +15,17 @@ import { useRegisterAuthMutation } from '../../redux/index.endpoints';
 import styles from './styles.module.scss';
 
 export const Register = () => {
+    const navigate = useNavigate();
     const token = Cookies.get('token');
+    // const [name, setName] = useState<string>('');
+    // const [email, setEmail] = useState<string>('');
+    // const [password1, setPassword1] = useState<string>('');
+    // const [password2, setPassword2] = useState<string>('');
     const [showPassword1, setShowPassword1] = useState<boolean>(false);
     const [showPassword2, setShowPassword2] = useState<boolean>(false);
     const { register, handleSubmit } = useForm();
     const [registerAuth, { isLoading, isSuccess, isError }] =
         useRegisterAuthMutation();
-    const navigate = useNavigate();
 
     const handleClickShowPassword1: React.MouseEventHandler = () =>
         setShowPassword1((show) => !show);
@@ -35,13 +39,19 @@ export const Register = () => {
 
     const formSubmit = (values: any) => {
         registerAuth(values);
+        console.log(values);
     };
 
     if (isSuccess) navigate('/cv');
 
-    // if (isError) return <Alert severity="error"> isError RTK Error! </Alert>;
-
-    // if (isLoading) return <CircularProgress disableShrink />;
+    // if (password1 === password2) {
+    //     const formSubmit = (values: any) => {
+    //         registerAuth(values);
+    //     };
+    //     return formSubmit
+    // } else {
+    //     console.log('Form submit function not found !');
+    // }
 
     return (
         <Box className={styles.register} id="#register">
@@ -115,7 +125,7 @@ export const Register = () => {
                     type={showPassword2 ? 'text' : 'password'}
                     autoComplete="ConfirmPassword"
                     className={styles.TextField}
-                    // {...register('password', {
+                    // {...register(`${password2}`, {
                     //     required: true,
                     //     minLength: 3,
                     //     maxLength: 20,
