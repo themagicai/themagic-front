@@ -9,8 +9,6 @@ export const Header = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const navigate = useNavigate();
-    const { pathname } = useLocation();
-    const [btn, setBtn] = useState<boolean>(false);
 
     const handleClick = (event: React.MouseEvent<HTMLElement>) =>
         setAnchorEl(event.currentTarget);
@@ -23,10 +21,6 @@ export const Header = () => {
         target.scrollIntoView({ behavior: 'smooth' });
         navigate('#register');
     };
-
-    if (pathname === 'cv') {
-        setBtn(btn === true);
-    }
 
     return (
         <header className={styles.header}>
@@ -57,7 +51,6 @@ export const Header = () => {
                 >
                     <MenuItem className={styles.MenuItem} onClick={handleClose}>
                         Log in
-                        {/* <Login /> */}
                     </MenuItem>
                     <MenuItem
                         className={styles.MenuItem}
@@ -67,18 +60,14 @@ export const Header = () => {
                         Sign Up
                     </MenuItem>
                 </Menu>
-                {btn ? null : <Login />}
-                {btn ? (
-                    <Logout />
-                ) : (
-                    <Button
-                        className={styles.Button2}
-                        variant="contained"
-                        onClick={toRegister}
-                    >
-                        Sign Up
-                    </Button>
-                )}
+                <Login />
+                <Button
+                    className={styles.Button2}
+                    variant="contained"
+                    onClick={toRegister}
+                >
+                    Sign Up
+                </Button>
             </Box>
         </header>
     );

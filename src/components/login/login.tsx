@@ -47,7 +47,7 @@ const modalButtonsStyle: React.CSSProperties = {
 };
 
 export const Login = () => {
-    const token = Cookies.get('token');
+    const token = Cookies.get('access');
     const [open, setOpen] = useState<boolean>(false);
     const [showPassword, setShowPassword] = useState<boolean>(false);
     const { register, handleSubmit } = useForm();
@@ -75,9 +75,9 @@ export const Login = () => {
 
     if (isSuccess) navigate('/cv');
 
-    useEffect(() => {
-        if (!token) navigate('/');
-    }, [token]);
+    // useEffect(() => {
+    //     if (!token) navigate('/');
+    // }, []);
 
     return (
         <Box className={styles.login}>

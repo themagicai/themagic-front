@@ -16,11 +16,7 @@ import styles from './styles.module.scss';
 
 export const Register = () => {
     const navigate = useNavigate();
-    const token = Cookies.get('token');
-    // const [name, setName] = useState<string>('');
-    // const [email, setEmail] = useState<string>('');
-    // const [password1, setPassword1] = useState<string>('');
-    // const [password2, setPassword2] = useState<string>('');
+    const token = Cookies.get('access');
     const [showPassword1, setShowPassword1] = useState<boolean>(false);
     const [showPassword2, setShowPassword2] = useState<boolean>(false);
     const { register, handleSubmit } = useForm();
@@ -40,7 +36,10 @@ export const Register = () => {
     const formSubmit = (values: any) => {
         registerAuth(values);
         console.log(values);
-        if (isSuccess) navigate('/cv');
+    };
+
+    if (isSuccess) {
+        navigate('/cv')
     };
 
     return (
@@ -115,7 +114,7 @@ export const Register = () => {
                     type={showPassword2 ? 'text' : 'password'}
                     autoComplete="ConfirmPassword"
                     className={styles.TextField}
-                    // {...register(`${password2}`, {
+                    // {...register('password', {
                     //     required: true,
                     //     minLength: 3,
                     //     maxLength: 20,
