@@ -73,15 +73,7 @@ export const Login = () => {
         console.log(values);
     };
 
-    if (isSuccess) navigate('cv');
-
-    // useEffect(() => {
-    //     if (isLogin) {
-    //         Cookies.set('token', isLogin.email, {
-    //             expires: 7,
-    //         });
-    //     }
-    // }, [isSuccess]);
+    if (isSuccess) navigate('/cv');
 
     useEffect(() => {
         if (!token) navigate('/');

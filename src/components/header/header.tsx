@@ -21,7 +21,7 @@ export const Header = () => {
     const toRegister = () => {
         const target: any = document.getElementById('#register');
         target.scrollIntoView({ behavior: 'smooth' });
-        navigate('register#register');
+        navigate('#register');
     };
 
     if (pathname === 'cv') {

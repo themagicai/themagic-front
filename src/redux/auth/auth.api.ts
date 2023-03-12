@@ -6,7 +6,7 @@ export const authApi = api.injectEndpoints({
     endpoints: (builder) => ({
         registerAuth: builder.mutation<any, RegisterTypes>({
             query: (body) => ({
-                url: 'api/register',
+                url: 'api/register/',
                 method: 'POST',
                 body,
             }),
@@ -15,7 +15,7 @@ export const authApi = api.injectEndpoints({
         }),
         loginAuth: builder.mutation<any, LoginTypes>({
             query: (body) => ({
-                url: 'api/login',
+                url: 'api/login/',
                 method: 'POST',
                 body,
             }),
@@ -25,7 +25,7 @@ export const authApi = api.injectEndpoints({
         }),
         logoutAuth: builder.mutation<any, LogoutTypes>({
             query: (body) => ({
-                url: 'api/logout',
+                url: 'api/logout/',
                 method: 'POST',
                 body,
             }),

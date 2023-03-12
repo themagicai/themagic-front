@@ -40,18 +40,8 @@ export const Register = () => {
     const formSubmit = (values: any) => {
         registerAuth(values);
         console.log(values);
+        if (isSuccess) navigate('/cv');
     };
-
-    if (isSuccess) navigate('/cv');
-
-    // if (password1 === password2) {
-    //     const formSubmit = (values: any) => {
-    //         registerAuth(values);
-    //     };
-    //     return formSubmit
-    // } else {
-    //     console.log('Form submit function not found !');
-    // }
 
     return (
         <Box className={styles.register} id="#register">
