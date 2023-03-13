@@ -38,7 +38,7 @@ export const Header = () => {
                             </Button>
                             <Menu {...bindMenu(popupState)}>
                                 <MenuItem onClick={popupState.close}>
-                                    Sign In
+                                    Login
                                 </MenuItem>
                                 <MenuItem onClick={popupState.close}>
                                     Sign Up

@@ -8,6 +8,7 @@ import {
     OutlinedInput,
     InputAdornment,
     IconButton,
+    CircularProgress,
 } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
@@ -47,12 +48,13 @@ const modalButtonsStyle: React.CSSProperties = {
 };
 
 export const Login = () => {
-    const token = Cookies.get('access');
     const [open, setOpen] = useState<boolean>(false);
     const [showPassword, setShowPassword] = useState<boolean>(false);
+    const [loading, setLoading] = useState<boolean>(false);
     const { register, handleSubmit } = useForm();
     const [loginUsers, { isLoading, isSuccess, isError }] =
         useLoginAuthMutation();
+    const token = Cookies.get('access');
     const navigate = useNavigate();
 
     const handleOpen: React.MouseEventHandler<HTMLElement> = () =>
@@ -67,6 +69,9 @@ export const Login = () => {
     const handleMouseDownPassword = (
         event: React.MouseEvent<HTMLButtonElement>
     ) => event.preventDefault();
+
+    const btnLoading: React.MouseEventHandler<HTMLElement> = () =>
+        setLoading(true);
 
     const formSubmit = (values: any) => {
         loginUsers(values);
@@ -150,8 +155,16 @@ export const Login = () => {
                             variant="contained"
                             type="submit"
                             color="primary"
+                            onClick={btnLoading}
                         >
                             Ok
+                            {loading ? (
+                                <CircularProgress
+                                    size={18}
+                                    color="inherit"
+                                    sx={{ ml: '8px' }}
+                                />
+                            ) : null}
                         </Button>
                     </Box>
                 </Box>
