@@ -6,7 +6,7 @@ import Cookies from 'js-cookie';
 import styles from './styles.module.scss';
 
 export const Logout = () => {
-    const token = Cookies.get('token');
+    const token = Cookies.get('access');
     const navigate = useNavigate();
     const [logoutUsers, { isLoading, isSuccess, isError }] =
         useLogoutAuthMutation();

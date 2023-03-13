@@ -11,7 +11,7 @@ import {
 
 export const authApi = api.injectEndpoints({
     endpoints: (builder) => ({
-        cvDetail: builder.mutation<VacancyRequirementTypes, any>({
+        cvDetail: builder.mutation<any, VacancyRequirementTypes>({
             query: (body) => ({
                 url: 'api/cv-detail',
                 method: 'POST',

@@ -1,22 +1,17 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Box, Button, Menu, MenuItem, Fade, Typography } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 import { Login, Logout } from '../';
 import styles from './styles.module.scss';
 
 export const Header = () => {
-    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-    const open = Boolean(anchorEl);
     const navigate = useNavigate();
+    // const [btnSign, setBtnSign] = useState<null | HTMLElement>(null);
+    // const logoutBtn = Boolean(btnSign);
 
-    const handleClick = (event: React.MouseEvent<HTMLElement>) =>
-        setAnchorEl(event.currentTarget);
-
-    const handleClose: React.MouseEventHandler<HTMLLIElement> = () =>
-        setAnchorEl(null);
-
-    const toRegister = () => {
+    const toRegister: React.MouseEventHandler<HTMLElement> = () => {
         const target: any = document.getElementById('#register');
         target.scrollIntoView({ behavior: 'smooth' });
         navigate('#register');
@@ -30,36 +25,28 @@ export const Header = () => {
                 </Typography>
             </Box>
             <Box className={styles.navRight}>
-                <Button
-                    className={styles.MenuButtonIcon}
-                    id="fade-button"
-                    aria-controls={open ? 'fade-menu' : undefined}
-                    aria-haspopup="true"
-                    aria-expanded={open ? 'true' : undefined}
-                    onClick={handleClick}
-                >
-                    <MenuIcon className={styles.MenuIcon} />
-                </Button>
-                <Menu
-                    className={styles.Menu}
-                    id="fade-menu"
-                    MenuListProps={{ 'aria-labelledby': 'fade-button' }}
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    TransitionComponent={Fade}
-                >
-                    <MenuItem className={styles.MenuItem} onClick={handleClose}>
-                        Log in
-                    </MenuItem>
-                    <MenuItem
-                        className={styles.MenuItem}
-                        // onClick={handleClose}
-                        onClick={toRegister}
-                    >
-                        Sign Up
-                    </MenuItem>
-                </Menu>
+                <PopupState variant="popover" popupId="demo-popup-menu">
+                    {(popupState) => (
+                        <React.Fragment>
+                            <Button
+                                variant="outlined"
+                                color='secondary'
+                                {...bindTrigger(popupState)}
+                                className={styles.MenuButtonIcon}
+                            >
+                                <MenuIcon className={styles.MenuIcon} />
+                            </Button>
+                            <Menu {...bindMenu(popupState)}>
+                                <MenuItem onClick={popupState.close}>
+                                    Sign In
+                                </MenuItem>
+                                <MenuItem onClick={popupState.close}>
+                                    Sign Up
+                                </MenuItem>
+                            </Menu>
+                        </React.Fragment>
+                    )}
+                </PopupState>
                 <Login />
                 <Button
                     className={styles.Button2}
