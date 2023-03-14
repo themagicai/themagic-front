@@ -6,11 +6,11 @@ import {
     InputAdornment,
     Button,
     IconButton,
+    CircularProgress,
 } from '@mui/material';
 import { VisibilityOff, Visibility } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
 import { useRegisterAuthMutation } from '../../redux/index.endpoints';
 import Cookies from 'js-cookie';
 import styles from './styles.module.scss';
@@ -18,11 +18,7 @@ import styles from './styles.module.scss';
 export const Register = () => {
     const [showPassword1, setShowPassword1] = useState<boolean>(false);
     const [showPassword2, setShowPassword2] = useState<boolean>(false);
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
+    const { register, handleSubmit } = useForm();
     const [registerAuth, { isLoading, isSuccess, isError }] =
         useRegisterAuthMutation();
     const token = Cookies.get('access');
@@ -39,16 +35,8 @@ export const Register = () => {
     ) => event.preventDefault();
 
     const formSubmit = (values: any) => {
-        try {
-            registerAuth(values);
-            console.log(values);
-            toast.success(`Регистрация прошла успешна!`, {
-                toastId: 'reg-toast-id',
-            });
-            navigate('/cv');
-        } catch (e) {
-            toast.error(`Ошибка при регистрации`, {toastId: 'reg-toast-id-error'})
-        }
+        registerAuth(values);
+        console.log(values);
     };
 
     if (isError) console.log('isError rtk');
@@ -78,7 +66,7 @@ export const Register = () => {
                         maxLength: 25,
                     })}
                 />
-
+                
                 <OutlinedInput
                     color="secondary"
                     placeholder="Email"
@@ -86,14 +74,12 @@ export const Register = () => {
                     autoComplete=""
                     className={styles.TextField}
                     {...register('email', {
-                        pattern:
-                            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                        pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                         required: true,
-                        minLength: 3,
+                        minLength: 10,
                         maxLength: 25,
                     })}
                 />
-                {errors.email ? <p color="red">Невалидный email</p> : null}
                 <OutlinedInput
                     color="secondary"
                     placeholder="Create password"
@@ -121,11 +107,6 @@ export const Register = () => {
                         </InputAdornment>
                     }
                 />
-                {errors.password ? (
-                    <p color="red">
-                        Длина пароля должна быть не менее 5 символов
-                    </p>
-                ) : null}
                 <OutlinedInput
                     color="secondary"
                     placeholder="Confirm password"
@@ -153,11 +134,6 @@ export const Register = () => {
                         </InputAdornment>
                     }
                 />
-                {errors.password ? (
-                    <p color="red">
-                        Длина пароля должна быть не менее 5 символов
-                    </p>
-                ) : null}
                 <Button
                     variant="contained"
                     color="primary"

@@ -8,11 +8,11 @@ import {
     OutlinedInput,
     InputAdornment,
     IconButton,
+    CircularProgress,
 } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
 import { useLoginAuthMutation } from '../../redux/index.endpoints';
 import styles from './styles.module.scss';
 
@@ -50,11 +50,7 @@ const modalButtonsStyle: React.CSSProperties = {
 export const Login = () => {
     const [open, setOpen] = useState<boolean>(false);
     const [showPassword, setShowPassword] = useState<boolean>(false);
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
+    const { register, handleSubmit } = useForm();
     const [loginUsers, { isLoading, isSuccess, isError }] =
         useLoginAuthMutation();
     const token = Cookies.get('access');
@@ -74,15 +70,8 @@ export const Login = () => {
     ) => event.preventDefault();
 
     const formSubmit = (values: any) => {
-
-        try {
-            loginUsers(values);
-            console.log(values);
-            navigate('/cv')
-        } catch (e) {
-            toast.error(`Ошибка при авторизации`, {toastId: 'log-toast-id-error'})
-            console.log('err', e)
-        }
+        loginUsers(values);
+        console.log(values);
     };
 
     if (isError) console.log('isError rtk query');
@@ -112,10 +101,11 @@ export const Login = () => {
                         {...register('email', {
                             pattern:
                                 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                            minLength: 10,
+                            maxLength: 20,
                             required: true,
                         })}
                     />
-                    {errors.email ? <p color='red'>Невалидный email</p> : null}
                     <br />
                     <OutlinedInput
                         sx={modalInputsStyle}
@@ -125,7 +115,7 @@ export const Login = () => {
                         placeholder="Create password"
                         {...register('password', {
                             required: true,
-                            minLength: 3,
+                            minLength: 5,
                             maxLength: 20,
                         })}
                         endAdornment={
