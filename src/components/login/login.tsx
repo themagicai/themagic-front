@@ -8,11 +8,11 @@ import {
     OutlinedInput,
     InputAdornment,
     IconButton,
-    CircularProgress,
 } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import { useLoginAuthMutation } from '../../redux/index.endpoints';
 import styles from './styles.module.scss';
 
@@ -50,8 +50,11 @@ const modalButtonsStyle: React.CSSProperties = {
 export const Login = () => {
     const [open, setOpen] = useState<boolean>(false);
     const [showPassword, setShowPassword] = useState<boolean>(false);
-    const [loading, setLoading] = useState<boolean>(false);
-    const { register, handleSubmit } = useForm();
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
     const [loginUsers, { isLoading, isSuccess, isError }] =
         useLoginAuthMutation();
     const token = Cookies.get('access');
@@ -70,12 +73,16 @@ export const Login = () => {
         event: React.MouseEvent<HTMLButtonElement>
     ) => event.preventDefault();
 
-    const btnLoading: React.MouseEventHandler<HTMLElement> = () =>
-        setLoading(true);
-
     const formSubmit = (values: any) => {
-        loginUsers(values);
-        console.log(values);
+
+        try {
+            loginUsers(values);
+            console.log(values);
+            navigate('/cv')
+        } catch (e) {
+            toast.error(`Ошибка при авторизации`, {toastId: 'log-toast-id-error'})
+            console.log('err', e)
+        }
     };
 
     if (isError) console.log('isError rtk query');
@@ -108,6 +115,7 @@ export const Login = () => {
                             required: true,
                         })}
                     />
+                    {errors.email ? <p color='red'>Невалидный email</p> : null}
                     <br />
                     <OutlinedInput
                         sx={modalInputsStyle}
@@ -151,16 +159,8 @@ export const Login = () => {
                             variant="contained"
                             type="submit"
                             color="primary"
-                            onClick={btnLoading}
                         >
                             Ok
-                            {loading ? (
-                                <CircularProgress
-                                    size={18}
-                                    color="inherit"
-                                    sx={{ ml: '8px' }}
-                                />
-                            ) : null}
                         </Button>
                     </Box>
                 </Box>

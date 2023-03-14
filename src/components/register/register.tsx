@@ -6,11 +6,11 @@ import {
     InputAdornment,
     Button,
     IconButton,
-    CircularProgress,
 } from '@mui/material';
 import { VisibilityOff, Visibility } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import { useRegisterAuthMutation } from '../../redux/index.endpoints';
 import Cookies from 'js-cookie';
 import styles from './styles.module.scss';
@@ -18,8 +18,11 @@ import styles from './styles.module.scss';
 export const Register = () => {
     const [showPassword1, setShowPassword1] = useState<boolean>(false);
     const [showPassword2, setShowPassword2] = useState<boolean>(false);
-    const [loading, setLoading] = useState<boolean>(false);
-    const { register, handleSubmit } = useForm();
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
     const [registerAuth, { isLoading, isSuccess, isError }] =
         useRegisterAuthMutation();
     const token = Cookies.get('access');
@@ -35,12 +38,17 @@ export const Register = () => {
         event: React.MouseEvent<HTMLButtonElement>
     ) => event.preventDefault();
 
-    const btnLoading: React.MouseEventHandler<HTMLElement> = () =>
-        setLoading(true);
-
     const formSubmit = (values: any) => {
-        registerAuth(values);
-        console.log(values);
+        try {
+            registerAuth(values);
+            console.log(values);
+            toast.success(`Регистрация прошла успешна!`, {
+                toastId: 'reg-toast-id',
+            });
+            navigate('/cv');
+        } catch (e) {
+            toast.error(`Ошибка при регистрации`, {toastId: 'reg-toast-id-error'})
+        }
     };
 
     if (isError) console.log('isError rtk');
@@ -70,6 +78,7 @@ export const Register = () => {
                         maxLength: 25,
                     })}
                 />
+
                 <OutlinedInput
                     color="secondary"
                     placeholder="Email"
@@ -77,12 +86,14 @@ export const Register = () => {
                     autoComplete=""
                     className={styles.TextField}
                     {...register('email', {
-                        pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        pattern:
+                            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                         required: true,
                         minLength: 3,
                         maxLength: 25,
                     })}
                 />
+                {errors.email ? <p color="red">Невалидный email</p> : null}
                 <OutlinedInput
                     color="secondary"
                     placeholder="Create password"
@@ -91,7 +102,7 @@ export const Register = () => {
                     className={styles.TextField}
                     {...register('password', {
                         required: true,
-                        minLength: 3,
+                        minLength: 5,
                         maxLength: 20,
                     })}
                     endAdornment={
@@ -110,6 +121,11 @@ export const Register = () => {
                         </InputAdornment>
                     }
                 />
+                {errors.password ? (
+                    <p color="red">
+                        Длина пароля должна быть не менее 5 символов
+                    </p>
+                ) : null}
                 <OutlinedInput
                     color="secondary"
                     placeholder="Confirm password"
@@ -118,7 +134,7 @@ export const Register = () => {
                     className={styles.TextField}
                     // {...register('password', {
                     //     required: true,
-                    //     minLength: 3,
+                    //     minLength: 5,
                     //     maxLength: 20,
                     // })}
                     endAdornment={
@@ -137,21 +153,18 @@ export const Register = () => {
                         </InputAdornment>
                     }
                 />
+                {errors.password ? (
+                    <p color="red">
+                        Длина пароля должна быть не менее 5 символов
+                    </p>
+                ) : null}
                 <Button
                     variant="contained"
                     color="primary"
                     type="submit"
                     className={styles.Button}
-                    onClick={btnLoading}
                 >
                     Try now
-                    {loading ? (
-                        <CircularProgress
-                            size={18}
-                            color="inherit"
-                            sx={{ ml: '8px' }}
-                        />
-                    ) : null}
                 </Button>
             </Box>
         </Box>
