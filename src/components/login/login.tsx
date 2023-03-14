@@ -8,11 +8,11 @@ import {
     OutlinedInput,
     InputAdornment,
     IconButton,
-    CircularProgress,
 } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import { useLoginAuthMutation } from '../../redux/index.endpoints';
 import styles from './styles.module.scss';
 
@@ -70,11 +70,17 @@ export const Login = () => {
     ) => event.preventDefault();
 
     const formSubmit = (values: any) => {
-        loginUsers(values);
-        console.log(values);
+        try {
+            loginUsers(values);
+            console.log(values);
+        } catch (e) {
+            toast.error(`Ошибка при авторизации`, {
+                toastId: 'log-toast-id-error',
+            });
+            console.log('err', e);
+            if (isError) console.log('isError rtk query');
+        }
     };
-
-    if (isError) console.log('isError rtk query');
 
     return (
         <Box className={styles.login}>
