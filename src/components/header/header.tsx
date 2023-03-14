@@ -7,15 +7,18 @@ import { Login, Logout } from '../';
 import styles from './styles.module.scss';
 
 export const Header = () => {
+    const [btnSign, setBtnSign] = useState<null | HTMLElement>(null);
+    const btnLogout = Boolean(btnSign);
     const navigate = useNavigate();
-    // const [btnSign, setBtnSign] = useState<null | HTMLElement>(null);
-    // const logoutBtn = Boolean(btnSign);
+    const { pathname } = useLocation();
 
     const toRegister: React.MouseEventHandler<HTMLElement> = () => {
         const target: any = document.getElementById('#register');
         target.scrollIntoView({ behavior: 'smooth' });
         navigate('#register');
     };
+
+    if (pathname === '/cv') btnLogout;
 
     return (
         <header className={styles.header}>
@@ -30,7 +33,7 @@ export const Header = () => {
                         <React.Fragment>
                             <Button
                                 variant="outlined"
-                                color='secondary'
+                                color="secondary"
                                 {...bindTrigger(popupState)}
                                 className={styles.MenuButtonIcon}
                             >
@@ -47,14 +50,18 @@ export const Header = () => {
                         </React.Fragment>
                     )}
                 </PopupState>
-                <Login />
-                <Button
-                    className={styles.Button2}
-                    variant="contained"
-                    onClick={toRegister}
-                >
-                    Sign Up
-                </Button>
+                {btnSign ? null : <Login />}
+                {btnSign ? (
+                    <Logout />
+                ) : (
+                    <Button
+                        variant="contained"
+                        className={styles.Button2}
+                        onClick={toRegister}
+                    >
+                        Sign Up
+                    </Button>
+                )}
             </Box>
         </header>
     );

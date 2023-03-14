@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Box, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { useLogoutAuthMutation } from '../../redux/index.endpoints';
@@ -12,13 +12,9 @@ export const Logout = () => {
         useLogoutAuthMutation();
 
     const logoutBtn: React.MouseEventHandler<HTMLElement> = () => {
-        Cookies.remove('token');
+        Cookies.remove('access');
         navigate('/');
     };
-
-    // useEffect(() => {
-    //     if (!token) navigate('/');
-    // }, [token]);
 
     return (
         <Box>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Cookies from 'js-cookie';
 import {
     Box,
@@ -78,11 +78,7 @@ export const Login = () => {
         console.log(values);
     };
 
-    if (isSuccess) navigate('/cv');
-
-    // useEffect(() => {
-    //     if (!token) navigate('/');
-    // }, []);
+    if (isError) console.log('isError rtk query');
 
     return (
         <Box className={styles.login}>

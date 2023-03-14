@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header, Footer } from '../../components';
 import {
     Box,
@@ -12,13 +12,21 @@ import {
     InputLabel,
     TextareaAutosize,
 } from '@mui/material';
+import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom';
 import styles from './styles.module.scss';
 
 export const CVPage = () => {
     const [age, setAge] = useState<string>('');
+    const token = Cookies.get('access');
+    const navigate = useNavigate();
 
     const handleChange = (event: SelectChangeEvent) =>
         setAge(event.target.value as string);
+
+    useEffect(() => {
+        if (!token) navigate('/');
+    }, [token]);
 
     return (
         <Box className={styles.cv}>
@@ -26,25 +34,25 @@ export const CVPage = () => {
             <Box className={styles.cvContainer}>
                 <Box className={styles.cvCont}>
                     <Box className={styles.vacancyRequirement}>
-                        <Typography className={styles.Typography} variant="h4">
+                        <Typography variant="h4" className={styles.Typography}>
                             Vacancy requirement
                         </Typography>
                         <Box className={styles.twoTextField}>
                             <OutlinedInput
-                                className={styles.OutlinedInput}
                                 type="text"
                                 color="secondary"
                                 placeholder="Enter company name"
                                 required
                                 size="small"
+                                className={styles.OutlinedInput}
                             />
                             <OutlinedInput
-                                className={styles.OutlinedInput}
                                 type="Email"
                                 color="secondary"
                                 placeholder="Enter position"
                                 required
                                 size="small"
+                                className={styles.OutlinedInput}
                             />
                         </Box>
                         <TextareaAutosize
@@ -55,7 +63,7 @@ export const CVPage = () => {
                         />
                     </Box>
                     <Box className={styles.personalInformation}>
-                        <Typography className={styles.Typography} variant="h4">
+                        <Typography variant="h4" className={styles.Typography}>
                             Personal information
                         </Typography>
                         <Box className={styles.BoxPersonalInputs}>
@@ -69,13 +77,13 @@ export const CVPage = () => {
                                     Grade
                                 </InputLabel>
                                 <Select
-                                    className={styles.Select}
-                                    value={age}
-                                    onChange={handleChange}
-                                    displayEmpty
                                     color="secondary"
                                     size="small"
                                     label="Grade"
+                                    displayEmpty
+                                    className={styles.Select}
+                                    value={age}
+                                    onChange={handleChange}
                                 >
                                     <MenuItem className={styles.MenuItem}>
                                         Specialist
@@ -127,18 +135,17 @@ export const CVPage = () => {
                         </Box>
                     </Box>
                     <Box className={styles.result}>
-                        <Typography className={styles.Typography} variant="h4">
+                        <Typography variant="h4" className={styles.Typography}>
                             Result
                         </Typography>
                         <TextareaAutosize
                             className={styles.TextareaAutosize}
-                            // placeholder=""
-                            // required
+                            disabled
                         />
                         <Box className={styles.Box}>
                             <Button
-                                className={styles.Button}
                                 variant="contained"
+                                className={styles.Button}
                             >
                                 Download
                             </Button>

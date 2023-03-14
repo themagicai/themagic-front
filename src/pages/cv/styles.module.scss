@@ -24,8 +24,13 @@ $inputBorderRadius: 12px;
     @include OutlinedInput;
     width: 700px;
     height: 400px !important;
-    border-color: #aa1ecd;
     padding: 20px;
+    border: none;
+    outline: none;
+
+    &:focus {
+        border: 2px solid #aa1ecd;
+    }
 
     @media (max-width: 769px) {
         max-width: 450px;
@@ -119,7 +124,6 @@ $inputBorderRadius: 12px;
                             border-radius: $inputBorderRadius;
 
                             .MenuItem {
-                                background-color: $colorBackInput;
                             }
                         }
                     }

@@ -25,9 +25,6 @@ export const Register = () => {
     const token = Cookies.get('access');
     const navigate = useNavigate();
 
-    const btnLoading: React.MouseEventHandler<HTMLElement> = () =>
-        setLoading(true);
-
     const handleClickShowPassword1: React.MouseEventHandler = () =>
         setShowPassword1((show) => !show);
 
@@ -38,12 +35,15 @@ export const Register = () => {
         event: React.MouseEvent<HTMLButtonElement>
     ) => event.preventDefault();
 
+    const btnLoading: React.MouseEventHandler<HTMLElement> = () =>
+        setLoading(true);
+
     const formSubmit = (values: any) => {
         registerAuth(values);
         console.log(values);
     };
 
-    if (isSuccess) navigate('/cv');
+    if (isError) console.log('isError rtk');
 
     return (
         <Box className={styles.register} id="#register">
