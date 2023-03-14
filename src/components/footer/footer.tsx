@@ -1,6 +1,6 @@
-import React from 'react';
-import { Typography, Link } from '@mui/material';
-import styles from './styles.module.scss';
+import React from "react";
+import { Typography, Link } from "@mui/material";
+import styles from "./styles.module.scss";
 
 export const Footer = () => {
     return (

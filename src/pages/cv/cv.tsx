@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Header, Footer } from '../../components';
+import React, { useState, useEffect } from "react";
+import { Header, Footer } from "../../components";
 import {
     Box,
     Typography,
@@ -11,21 +11,21 @@ import {
     MenuItem,
     InputLabel,
     TextareaAutosize,
-} from '@mui/material';
-import Cookies from 'js-cookie';
-import { useNavigate } from 'react-router-dom';
-import styles from './styles.module.scss';
+} from "@mui/material";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
+import styles from "./styles.module.scss";
 
 export const CVPage = () => {
-    const [age, setAge] = useState<string>('');
-    const token = Cookies.get('access');
+    const [age, setAge] = useState<string>("");
+    const token = Cookies.get("access");
     const navigate = useNavigate();
 
     const handleChange = (event: SelectChangeEvent) =>
         setAge(event.target.value as string);
 
     useEffect(() => {
-        if (!token) navigate('/');
+        if (!token) navigate("/");
     }, [token]);
 
     return (

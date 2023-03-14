@@ -1,7 +1,7 @@
-import React from 'react';
-import { Box, Typography } from '@mui/material';
-import Arrows from '../../assets/images/arrow.png';
-import styles from './styles.module.scss';
+import React from "react";
+import { Box, Typography } from "@mui/material";
+import Arrows from "../../assets/images/arrow.png";
+import styles from "./styles.module.scss";
 
 export const VideoConcept = () => {
     return (

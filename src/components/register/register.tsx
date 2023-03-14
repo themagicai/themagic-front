@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
     Box,
     Typography,
@@ -6,14 +6,14 @@ import {
     InputAdornment,
     Button,
     IconButton,
-} from '@mui/material';
-import { VisibilityOff, Visibility } from '@mui/icons-material';
-import { useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
-import { useRegisterAuthMutation } from '../../redux/index.endpoints';
-import Cookies from 'js-cookie';
-import styles from './styles.module.scss';
+} from "@mui/material";
+import { VisibilityOff, Visibility } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import { useRegisterAuthMutation } from "../../redux/index.endpoints";
+import Cookies from "js-cookie";
+import styles from "./styles.module.scss";
 
 export const Register = () => {
     const [showPassword1, setShowPassword1] = useState<boolean>(false);
@@ -21,7 +21,7 @@ export const Register = () => {
     const { register, handleSubmit } = useForm();
     const [registerAuth, { isLoading, isSuccess, isError }] =
         useRegisterAuthMutation();
-    const token = Cookies.get('access');
+    const token = Cookies.get("access");
     const navigate = useNavigate();
 
     const handleClickShowPassword1: React.MouseEventHandler = () =>
@@ -39,14 +39,14 @@ export const Register = () => {
             registerAuth(values);
             console.log(values);
             toast.success(`Регистрация прошла успешна!`, {
-                toastId: 'reg-toast-id',
+                toastId: "reg-toast-id",
             });
-            navigate('/cv');
+            navigate("/cv");
         } catch (e) {
             toast.error(`Ошибка при регистрации`, {
-                toastId: 'reg-toast-id-error',
+                toastId: "reg-toast-id-error",
             });
-            if (isError) console.log('isError rtk');
+            if (isError) console.log("isError rtk");
         }
     };
 
@@ -68,7 +68,7 @@ export const Register = () => {
                     type="text"
                     autoComplete=""
                     className={styles.TextField}
-                    {...register('name', {
+                    {...register("name", {
                         pattern: /^[A-Za-z]+$/i,
                         required: true,
                         minLength: 3,
@@ -82,7 +82,7 @@ export const Register = () => {
                     type="email"
                     autoComplete=""
                     className={styles.TextField}
-                    {...register('email', {
+                    {...register("email", {
                         pattern:
                             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                         required: true,
@@ -93,10 +93,10 @@ export const Register = () => {
                 <OutlinedInput
                     color="secondary"
                     placeholder="Create password"
-                    type={showPassword1 ? 'text' : 'password'}
+                    type={showPassword1 ? "text" : "password"}
                     autoComplete="confirmPassword"
                     className={styles.TextField}
-                    {...register('password', {
+                    {...register("password", {
                         required: true,
                         minLength: 5,
                         maxLength: 20,
@@ -120,7 +120,7 @@ export const Register = () => {
                 <OutlinedInput
                     color="secondary"
                     placeholder="Confirm password"
-                    type={showPassword2 ? 'text' : 'password'}
+                    type={showPassword2 ? "text" : "password"}
                     autoComplete="ConfirmPassword"
                     className={styles.TextField}
                     // {...register('password', {

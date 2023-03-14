@@ -1,17 +1,17 @@
-import { createBrowserRouter, Link } from 'react-router-dom';
-import { HomePage, CVPage, ErrorPage } from '../pages';
+import { createBrowserRouter, Link } from "react-router-dom";
+import { HomePage, CVPage, ErrorPage } from "../pages";
 
 export const router = createBrowserRouter([
     {
-        path: '/',
+        path: "/",
         element: <HomePage />,
     },
     {
-        path: 'cv',
+        path: "cv",
         element: <CVPage />,
     },
     {
-        path: '*',
+        path: "*",
         element: <ErrorPage />,
     },
 ]);

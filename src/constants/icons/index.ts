@@ -4,6 +4,6 @@ export interface ObjType {
 }
 
 const obj = {
-    name: 'React',
-    surname: 'SReact',
+    name: "React",
+    surname: "SReact",
 };

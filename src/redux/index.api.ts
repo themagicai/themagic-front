@@ -1,34 +1,34 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import Cookies from 'js-cookie';
-import { UserTypes } from './index.types';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import Cookies from "js-cookie";
+import { UserTypes } from "./index.types";
 
 export const api = createApi({
-    reducerPath: 'api/themagicai',
+    reducerPath: "api/themagicai",
     baseQuery: fetchBaseQuery({
         baseUrl: import.meta.env.VITE_SOME_KEY,
         prepareHeaders: (headers) => {
-            const token = Cookies.get('token');
+            const token = Cookies.get("token");
             if (token) {
-                headers.set('Authorization', `Bearer ${token}`);
+                headers.set("Authorization", `Bearer ${token}`);
             }
             return headers;
         },
     }),
     refetchOnFocus: true,
     tagTypes: [
-        'cv-detail',
-        'letter-detail',
-        'login',
-        'logout',
-        'make-cv',
-        'make-letters',
-        'password/reset',
-        'register',
-        'schema',
-        'skills',
-        'token',
-        'users',
-        'users/me',
+        "cv-detail",
+        "letter-detail",
+        "login",
+        "logout",
+        "make-cv",
+        "make-letters",
+        "password/reset",
+        "register",
+        "schema",
+        "skills",
+        "token",
+        "users",
+        "users/me",
     ],
     endpoints: (builder) => ({
         getUsers: builder.query<UserTypes[], string>({

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
     Header,
     Banner,
@@ -6,9 +6,9 @@ import {
     Cards,
     Register,
     Footer,
-} from '../../components';
-import { Box } from '@mui/material';
-import styles from './styles.module.scss';
+} from "../../components";
+import { Box } from "@mui/material";
+import styles from "./styles.module.scss";
 
 export const HomePage = () => {
     return (

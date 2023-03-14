@@ -1,23 +1,23 @@
-import { api } from '../index.api';
+import { api } from "../index.api";
 import {
     VacancyRequirementTypes,
     PersonalInformationTypes,
     ResultTypes,
-} from './cv.types';
+} from "./cv.types";
 import {
     transformResponse,
     transformErrorResponse,
-} from '../../utils/transformResponse';
+} from "../../utils/transformResponse";
 
 export const authApi = api.injectEndpoints({
     endpoints: (builder) => ({
         cvDetail: builder.mutation<any, VacancyRequirementTypes>({
             query: (body) => ({
-                url: 'api/cv-detail',
-                method: 'POST',
+                url: "api/cv-detail",
+                method: "POST",
                 body,
             }),
-            invalidatesTags: ['cv-detail'],
+            invalidatesTags: ["cv-detail"],
             transformResponse,
             transformErrorResponse,
         }),

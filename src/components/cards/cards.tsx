@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 import {
     Box,
     Typography,
     Card,
     CardActionArea,
     CardContent,
-} from '@mui/material';
-import styles from './styles.module.scss';
+} from "@mui/material";
+import styles from "./styles.module.scss";
 
 type cardDataTypes = {
     id: number;
@@ -17,23 +17,23 @@ type cardDataTypes = {
 export const cardData: Array<cardDataTypes> = [
     {
         id: 1,
-        title: 'Selling CV',
-        desc: 'Help to package your experience in a CV for your dream Job',
+        title: "Selling CV",
+        desc: "Help to package your experience in a CV for your dream Job",
     },
     {
         id: 2,
-        title: 'Attractive Cover Letter',
-        desc: 'Writ e a best letter for the vacancy',
+        title: "Attractive Cover Letter",
+        desc: "Writ e a best letter for the vacancy",
     },
     {
         id: 3,
-        title: 'LinkedIn profile',
-        desc: 'Boost your LinkedIn presence and increase job invitations',
+        title: "LinkedIn profile",
+        desc: "Boost your LinkedIn presence and increase job invitations",
     },
     {
         id: 4,
-        title: 'Prepare for an interview',
-        desc: 'Provide questions, act as an interviewer and correct errors',
+        title: "Prepare for an interview",
+        desc: "Provide questions, act as an interviewer and correct errors",
     },
 ];
 

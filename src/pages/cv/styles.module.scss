@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
 
 $colorBackInput: #353535;
 $colorInputText: #9c9c9c;
 $inputBorderRadius: 12px;
 
 @mixin Typography {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 800;
     margin-bottom: 20px;
 
@@ -63,7 +63,7 @@ $inputBorderRadius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-image: url('../../assets/images/Background.png');
+        background-image: url("../../assets/images/Background.png");
         background-size: 100% 100%;
         background-repeat: no-repeat;
 

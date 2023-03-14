@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Cookies from 'js-cookie';
+import React, { useEffect, useState } from "react";
+import Cookies from "js-cookie";
 import {
     Box,
     Button,
@@ -8,43 +8,43 @@ import {
     OutlinedInput,
     InputAdornment,
     IconButton,
-} from '@mui/material';
-import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
-import { useLoginAuthMutation } from '../../redux/index.endpoints';
-import styles from './styles.module.scss';
+} from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import { useLoginAuthMutation } from "../../redux/index.endpoints";
+import styles from "./styles.module.scss";
 
 const modalFormStyle = {
-    position: 'absolute' as 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
+    position: "absolute" as "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
     width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #660080',
+    bgcolor: "background.paper",
+    border: "2px solid #660080",
     boxShadow: 24,
     p: 4,
-    borderRadius: '10px',
+    borderRadius: "10px",
 };
 
 const modalInputsStyle: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
 };
 
 const BoxButtonsStyle: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
 };
 
 const modalButtonsStyle: React.CSSProperties = {
-    backgroundColor: '#333',
-    borderRadius: '5px',
-    textTransform: 'none',
+    backgroundColor: "#333",
+    borderRadius: "5px",
+    textTransform: "none",
 };
 
 export const Login = () => {
@@ -53,7 +53,7 @@ export const Login = () => {
     const { register, handleSubmit } = useForm();
     const [loginUsers, { isLoading, isSuccess, isError }] =
         useLoginAuthMutation();
-    const token = Cookies.get('access');
+    const token = Cookies.get("access");
     const navigate = useNavigate();
 
     const handleOpen: React.MouseEventHandler<HTMLElement> = () =>
@@ -73,12 +73,13 @@ export const Login = () => {
         try {
             loginUsers(values);
             console.log(values);
+            navigate("/cv");
         } catch (e) {
             toast.error(`Ошибка при авторизации`, {
-                toastId: 'log-toast-id-error',
+                toastId: "log-toast-id-error",
             });
-            console.log('err', e);
-            if (isError) console.log('isError rtk query');
+            console.log("err", e);
+            if (isError) console.log("isError rtk query");
         }
     };
 
@@ -104,7 +105,7 @@ export const Login = () => {
                         type="email"
                         autoComplete=""
                         placeholder="Email"
-                        {...register('email', {
+                        {...register("email", {
                             pattern:
                                 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                             minLength: 10,
@@ -116,10 +117,10 @@ export const Login = () => {
                     <OutlinedInput
                         sx={modalInputsStyle}
                         color="secondary"
-                        type={showPassword ? 'text' : 'password'}
+                        type={showPassword ? "text" : "password"}
                         autoComplete=""
                         placeholder="Create password"
-                        {...register('password', {
+                        {...register("password", {
                             required: true,
                             minLength: 5,
                             maxLength: 20,

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Box, Button, Menu, MenuItem, Fade, Typography } from '@mui/material';
-import { Menu as MenuIcon } from '@mui/icons-material';
-import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
-import { Login, Logout } from '../';
-import styles from './styles.module.scss';
+import React, { useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Box, Button, Menu, MenuItem, Fade, Typography } from "@mui/material";
+import { Menu as MenuIcon } from "@mui/icons-material";
+import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
+import { Login, Logout } from "../";
+import styles from "./styles.module.scss";
 
 export const Header = () => {
     const [btnSign, setBtnSign] = useState<null | HTMLElement>(null);
@@ -13,12 +13,12 @@ export const Header = () => {
     const { pathname } = useLocation();
 
     const toRegister: React.MouseEventHandler<HTMLElement> = () => {
-        const target: any = document.getElementById('#register');
-        target.scrollIntoView({ behavior: 'smooth' });
-        navigate('#register');
+        const target: any = document.getElementById("#register");
+        target.scrollIntoView({ behavior: "smooth" });
+        navigate("#register");
     };
 
-    if (pathname === '/cv') btnLogout;
+    if (pathname === "/cv") btnLogout;
 
     return (
         <header className={styles.header}>

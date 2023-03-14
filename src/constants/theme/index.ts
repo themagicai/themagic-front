@@ -4,6 +4,6 @@ export interface ObjType {
 }
 
 const obj = {
-    name: 'Ramil',
-    surname: 'Kamalov',
+    name: "Ramil",
+    surname: "Kamalov",
 };
